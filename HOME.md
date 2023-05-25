@@ -16,4 +16,5 @@ JavaScript - це наша щоденна робота, яка також над
 Готові вирушити у подорож?
 
 
-**START** 🚀 [1. JavaScript](/pages/01-javascript/)
+#### START  🚀 
+👉 [1. JavaScript](/poznan-ukr/pages/01-javascript/)
