@@ -1,39 +1,37 @@
-# Wyprawy kosmiczne repozytorium girls.js Poznań 
+# Warsztaty girls.js Poznań / Експедиції у космос, репозиторій girls.js у Познані.
+
+The configuration of book is the same as in the poznan-pl and poznan-eng repositories.
+
+### Конфігурація
+Конфігурація сторінки використовує Github Pages та генератор сторінок Jekyll (за замовчуванням доступний на Github Pages).
+
+Github Actions виконують збірку та розгортання за допомогою файлу `.github/jekyll-gh-pages.yml`. Додаткові налаштування шаблону знаходяться в файлі `_config.yml`.
+
+Шаблони Jekyll: [https://jekyllrb.com/docs/pages/](https://jekyllrb.com/docs/pages/)
+
+Усю додаткову інформацію щодо використання шаблону можна знайти у файлі `THEME.md` у папці `docs`.
 
 
-### Konfiguracja
-Konfiguracja strony korzysta z Github Pages oraz generatora stron Jekyll (dostępny domyślnie z Github Pages).
+### Додавання підсторінок
 
-Github Actions wykonują build & deploy w pliku `.github/jekyll-gh-pages.yml`. Dodatkowo ustawienia szablonu znajdują się w `_config.yml`. 
+Укорочено:
 
-Szablony jekyll: https://jekyllrb.com/docs/pages/
+Посібник розділений на підсторінки у папці `_pages` - це окремі розділи майстерень.
 
-Wszystkie dodatkowe informacje jak korzystać z szablonu znajdują się w pliku `THEME.md` w folderze docs.
+Усі розділи майстерень повинні бути у форматі **markdown** та бути розміщені у папці `_posts`. Крім того, файли повинні мати відповідно оформлену шапку.
 
-
-### Dodawanie podstron
-
-W skrócie:
-
-Podręcznik dzieli się na podstrony `_pages` - kolejne rozdziały warsztatów. 
-
-Wszystkie chaptery warsztatów muszą być w formacie **markdown** i być umieszczone w folderze `_posts`. Dodatkowo pliki muszą posiadać odpowiednią sformatowany nagłówek.
-
-```md
-
+```markdown
 ---
-title: Why JS?
-author: Rita Lyczywek
-date: 2023-04-27 
+title: Why JS? (Чому JS?)
+author: Rita Lyczywek 
+date: 2023-04-27
 category: programming
 layout: post
 cover: ../assets/cover.png
 ---
-
 ```
 
-- obowiązkowo: title, layout
-- opcjonalnie: author, date, category, cover
+- обов'язково: title (назва), layout (розмітка)
+- опціонально: author (автор), date (дата), category (категорія), cover (обкладинка)
+Пости автоматично сортуються за номерами розділів - будь ласка, дотримуйтесь цієї конвенції.
 
-
-Posty są sortowane automatycznie wg numerów chapterów - zachowaj konwencję
