@@ -4,60 +4,60 @@ layout: post
 ---
 
 
-GIT to narzędzie do kontrolowania zmian w projekcie.  Tworzy on historię i umożliwia sprawną współpracę między wieloma programistami. By korzystać z GITa warto poznań kilka pojęć:
+GIT - це інструмент для контролю змін у проекті. Він створює історію і дозволяє ефективно співпрацювати багатьом програмістам. Для використання GIT корисно засвоїти кілька понять:
 
-**terminal** - aplikacja tekstowa służąca do przeglądania, obsługi i operowania plikami na Twoim komputerze. Jak go uruchomić?
+**термінал** - текстовий додаток для перегляду, обробки та операцій з файлами на вашому комп'ютері. Як його запустити?
 
-Windows: Start → Wszystkie programy → Akcesoria → Wiersz poleceń
+- Windows: Пуск → Усі програми → Аксесуари → Командний рядок
 
-Mac OS: Aplikacje → Narzędzia → Terminal
+- Mac OS: Додатки → Утиліти → Термінал
 
-Linux: Aplikacje → Akcesoria → Terminal
+- Linux: Додатки → Аксесуари → Термінал
 
-**repozytorium** - miejsce, gdzie znajduje się nasza aplikacja. To historię tego folderu obserwuje GIT. Na komputerze można mieć kilka takich folderów.
+**репозиторій** - місце, де знаходиться наш додаток. GIT стежить за історією цієї папки. На комп'ютері можна мати кілька таких папок.
 
-**commit** - paczka zmian, która jest częścią historii danego repozytorium. W trakcie pracy nad projektem tworzysz kolejne commity i zarządzasz nimi
+**комміт** - пакет змін, який є частиною історії певного репозиторію. Під час роботи над проектом ви створюєте додаткові комміти і керуєте ними.
 
-**branch** - gałąź Twojego projektu. Programiści pracują na osobnych branchach, np. nad różnymi funkcjonalnościami strony, po czym łączą je w jedną całość.
+**гілка** - гілка вашого проекту. Програмісти працюють на окремих гілках, наприклад, над різними функціональностями сторінки, а потім об'єднують їх в одне ціле.
 
-### Instalacja GITa:
+### Встановлення GIT:
 
 [https://git-scm.com/downloads](https://git-scm.com/downloads)
 
-### Podstawowe komendy:
+### Основні команди:
 
-* **git init** - inicjalizuje repozytorium GIT w danym katalogu
+* **git init** - ініціалізує GIT-репозиторій у вказаній папці.
 
-* **git add nazwa\_pliku** - dodaje zmiany we wskazanym pliku do commita
+* **git add назва_файлу** - додає зміни у вказаний файл до комміту.
 
-* **git commit -m "treść\_commita"** - dodaje opis do commita
+* **git commit -m "текст_комміту"** - додає опис до комміту.
 
-* **git add origin adres\_repozytorium**, np. [https://github.com/username/moje-repozytorium.git](https://github.com/username/moje-repozytorium.git) - ustawia konkretny adres zdalnego repozytorium jako główne repozytorium
+* **git add origin адреса_репозиторію**, наприклад, [https://github.com/username/moje-repozytorium.git](https://github.com/username/moje-repozytorium.git) - встановлює конкретну адресу віддаленого репозиторію як головний репозиторій.
 
-* **git push origin master** - wysłanie zmian do branacha zdalnego
+* **git push origin master** - відправляє зміни до віддаленої гілки.
 
-* **git checkout nazwa\_brancha** - zmienia aktywny branch na wybrany przez użytkownika
+* **git checkout назва_гілки** - змінює активну гілку на обрану користувачем.
 
-* **git pull** - pobranie zmian ze zdalnego repozytorium
+* **git pull** - отримує зміни з віддаленого репозиторію.
 
-### Zadanie:
+### Завдання:
 
-1. Zainstaluj na swoim komputerze GITa zgodnie z instrukcją na stronie:[ https://git-scm.com/book/pl/v1/Pierwsze-kroki-Instalacja-Git](https://git-scm.com/book/pl/v1/Pierwsze-kroki-Instalacja-Git).
-2. Załóż konto na [github.com](https://github.com/).
-3. Na GitHubie stwórz nowe repozytorium.
-4. W katalogu ze stroną "A jednak się kręci" zainicjuj repozytorium GITa.
-5. Wyślij pliki z tego folderu do zdalnego repozytorium na GitHubie.
+1. Встановіть GIT на свій комп'ютер, дотримуючись інструкцій на цій сторінці: [https://git-scm.com/book/pl/v1/Pierwsze-kroki-Instalacja-Git](https://git-scm.com/book/pl/v1/Pierwsze-kroki-Instalacja-Git).
+2. Створіть обліковий запис на [github.com](https://github.com/).
+3. На GitHub створіть новий репозиторій.
+4. Ініціалізуйте GIT-репозиторій у папці зі сторінкою "A jednak się kręci".
+5. Надішліть файли з цієї папки до віддаленого репозиторію на GitHub.
 
 ## GitHub Pages
 
-GitHub oferuje także hosting Twoich stron.
+GitHub також пропонує хостинг для ваших сторінок.
 
-### Zadanie:
+### Завдання:
 
-1. Stwórz na GitHub nową organizację lub repozytorium.
-2. Na podstawie instrukcji zamieszczonej na stronie: [https://pages.github.com/](https://pages.github.com/) zamieść stronę "Wyprawy Kosmiczne" na GitHub Pages. 
-3. Wyświetl nową stronę w przeglądarce.
+1. Створіть нову організацію або репозиторій на GitHub.
+2. Використовуючи інструкції, наведені на цій сторінці: [https://pages.github.com/](https://pages.github.com/), розмістіть сторінку "Wyprawy Kosmiczne" на GitHub Pages.
+3. Перегляньте нову сторінку у вашому веб-переглядачі.
 
-**Podpowiedź:**
+**Підказка:**
 
-[O Github Pages krok po kroku](https://www.flynerd.pl/2018/02/opublikowac-strone-internetowa-github-pages-krok-kroku.html)
+[Покроковий посібник по GitHub Pages PL](https://www.flynerd.pl/2018/02/opublikowac-strone-internetowa-github-pages-krok-kroku.html)
