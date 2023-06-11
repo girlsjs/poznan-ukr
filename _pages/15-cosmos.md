@@ -1,27 +1,27 @@
 ---
-title: 15. Wyprawy kosmiczne
+title: 15. Космічні експедиції
 layout: post
 ---
 
-Programiści zmieniają świat. Ich praca jest niezbędna do eksploracji kosmosu. Spróbujmy i my :D
+Програмісти змінюють світ. Їхня робота має важливе значення для освоєння космосу. Спробуймо і ми :D
 
-Jako że nam nie udało się jeszcze nikogo wysłać w kosmos, skorzystamy z pomocy i zasobów NASA.
+Оскільки нам ще не вдалося нікого відправити в космос, ми скористаємося допомогою та ресурсами NASA.
 
-## Co słychać na Marsie?
+## Що відбувається на Марсі?
 
-Najpierw musimy zdobyć klucz dostępu. Zrobimy to tu: [https://api.nasa.gov/index.html\#apply-for-an-api-key](https://api.nasa.gov/index.html#apply-for-an-api-key).
+Спочатку нам потрібно отримати ключ доступу. Ми зробимо це тут: [https://api.nasa.gov/index.html\#apply-for-an-api-key](https://api.nasa.gov/index.html#apply-for-an-api-key).
 
-Pomoże nam on dostać się zasobów udostępnianych przez NASA. Ich listę możecie znaleźć tu: [https://api.nasa.gov/api.html\#how-do-i-see-my-current-usage?](https://api.nasa.gov/api.html#how-do-i-see-my-current-usage?)
+Він допоможе нам отримати доступ до ресурсів, наданих NASA. Їх список можна знайти тут: [https://api.nasa.gov/api.html\#how-do-i-see-my-current-usage?](https://api.nasa.gov/api.html#how-do-i-see-my-current-usage?)
 
-Na początek zaczniemy od zdjęcia dnia :\)
+Почнімо з фото дня :\)
 
-Kiedy wejdziecie na ten adres [https://api.nasa.gov/planetary/apod?api\_key=DEMO\_KEY](https://api.nasa.gov/planetary/apod?api_key=DEMO_KEY) zobaczycie... obiekt.
+При переході за цією адресою [https://api.nasa.gov/planetary/apod?api\_key=DEMO\_KEY](https://api.nasa.gov/planetary/apod?api_key=DEMO_KEY) побачите... об'єкт.
 
-Mamy datę, opis, adresy do zdjęć w dwóch rozmiarach, typ oraz tytuł. Stworzymy stronę, której tłem będzie zdjęcie dnia. Sprawdźmy, jakie jest dzisiaj :D
+У нас є дата, опис, адреси до фотографій у двох розмірах, тип і назва. Ми створимо сторінку з фотографією дня як фону. З'ясуймо, що сьогодні :D
 
-Na początek pobierz paczkę z plikiem HTML, CSS i JS, która dostępna jest [TUTAJ](https://drive.google.com/open?id=1HEAG_bmuEWIsIX939rXJP3xV-8PFj-0F).
+Для початку завантажуй пакет файлів HTML, CSS та JS, який доступний [ТУТ](https://drive.google.com/open?id=1HEAG_bmuEWIsIX939rXJP3xV-8PFj-0F).
 
-Zaczniemy od tego, by zmieniać tło body na obraz. W CSS służy do tego `background-image`. By zmienić tło za pomocą JSa stworzymy funkcję, której argumentem będzie ścieżka do obrazka:
+Ми почнемо зі зміни фону тіла на зображення. В CSS для цього використовується `background-image`. Для зміни фону за допомогою JS ми створимо функцію, аргументом якої буде шлях до зображення:
 
 ```js
 function changeBackground(imageURL) {
@@ -29,15 +29,15 @@ function changeBackground(imageURL) {
 }
 ```
 
-Posłużymy się właściwością `style` , którą już znamy. Na liście wszystkich styli jest też `backgroundImage`. To do niego przypiszemy adres do naszego obrazka.
+Ми скористаємося вже знайомою нам властивістю `style`. У списку всіх стилів є також `backgroundImage`. Саме йому ми призначимо адресу для нашого зображення.
 
-Standardowo wyglądałoby to tak:
+За замовчуванням вона буде виглядати так:
 
 ```js
 document.body.style.backgroundImage = "url('img_unicorn.png')";
 ```
 
-Ale nasz adres obrazka będzie się zmieniał i będzie przyjmował wartość, którą wpiszemy jako argument funkcji, więc:
+Але адреса нашого зображення зміниться і прийме значення, яке ми введемо як аргумент функції, тому:
 
 ```js
 function changeBackground(imageURL) {
@@ -45,17 +45,17 @@ function changeBackground(imageURL) {
 }
 ```
 
-Teraz czas na podłączenie się do api NASA!
+Тепер настав час під'єднатися до API NASA!
 
-Na początek stworzymy zmienną z adresem URL, pod którym kryje się obiekt z naszym obrazkiem. Zamiast DEMO\_KEY wpisujemy nasz klucz.
+Для початку ми створимо змінну з URL-адресою за нашим об'єктом зображення. Замість `DEMO_KEY` ми введемо наш ключ.
 
 ```js
 let dataURL = 'https://api.nasa.gov/planetary/apod?api_key=DEMO_KEY';
 ```
 
-Teraz stwórzmy funkcję `getPicture`. W jej wnętrzu napiszemy kod który będzie pobierał dane z adresu wskazanego pod `dataURL`. Posłuży nam do tego `fetch API` - narzędzie do dynamicznego pobierania danych. Jest to dość nowe rozwiązanie, obsługiwane przez nowe przeglądarki.
+Тепер створимо функцію `getPicture`. Усередині неї ми напишемо код, який буде отримувати дані за адресою, вказаною в полі `dataURL`. Для цього ми використаємо `fetch API` &mdash; інструмент для динамічного отримання даних. Це досить новий інструмент, який підтримується новими браузерами.
 
-Spróbujemy po kolei:
+Ми спробуємо це зробити крок за кроком:
 
 ```js
 function getPicture() {
@@ -65,10 +65,11 @@ function getPicture() {
     })
 }
 ```
+Після виконання `fetch` повертає нам проміс (обіцянку, promise). Проміси дозволяють нам контролювати порядок виконання коду. Якщо проміс виконано, починає виконуватися наступний фрагмент коду \(then\). Якщо за адресою `dataURL` щось є, ми отримуємо доступ до відповіді з цієї сторінки і відображаємо її.
 
-Po uruchemieniu `fetch` zwraca nam Promise. Promise'y pozwalają nam kontrolować kolejność kodu. Jeżeli jakaś obietnica została spełniona zaczyna działaś kolejny kawałek kodu \(then\). Jeśli pod adresem `dataURL` coś się znajduje, uzyskujemy dostęp do odpowiedzi z tej strony i ją wyświetlamy.
+Ще один новий елемент &mdash; стрілки `=>`. Це простіший запис функцій, з якими ми вже знайомі. Наша функція має один аргумент `resp` і цей аргумент відображається в консолі. Викличемо функцію і подивимося на нашу консоль. У ній ми побачимо відповідь від сервера. Конвертуємо її в більш дружній формат, наприклад, JSON.
 
-Kolejny nowy elemeny to strzałki `=>`. Jest to prostszy zapis znanych nam funkcji. Nasza funkcja ma jeden argument \(`resp`\) i ten argument wyświetla w konsoli. Wywołajmy funkcję i spójrzmy na naszą konsolę. Mamy w niej odpowiedź z serwera. Zamieńmy ją na przyjaźniejszy format, np. json. Najczęściej dane w formacie JSON są pobierane z serwera jako tekst, a następnie przekształcane w obiekt. By przekształcić naszą odpowiedź z serwera dopiszmy do niej metodę `json()`.
+Найчастіше дані в форматі JSON беруться з сервера у вигляді тексту, а потім конвертуються в об'єкт. Щоб перетворити нашу відповідь від сервера, додамо до неї метод `json()`.
 
 ```js
 function getPicture() {
@@ -79,7 +80,7 @@ function getPicture() {
 }
 ```
 
-To także jest obietnica \(Promise\). Po jej spełnieniu powinniśmy móc wyświetlić nasz obiekt. Sprawdźmy to.
+Це теж проміс. Як тільки він буде виконаний, ми зможемо показати наш об'єкт. Перевірмо.
 
 ```js
 function getPicture() {
@@ -92,8 +93,7 @@ function getPicture() {
         });
 }
 ```
-
-Mamy nasz obiekt! Nam jednak zależy na konkretnym elemencie: `hdurl`. Pamiętasz jak w obiekcie wyświetlamy daną wartość? Dokładnie - odwołując się do klucza.
+У нас є наше приміщення! Однак, нас цікавить конкретний елемент: `hdurl`. Пам'ятаєте, як ми відображаємо значення в об'єкті? Саме так: за допомогою посилання на ключ.
 
 ```js
 function getPicture() {
@@ -107,7 +107,7 @@ function getPicture() {
 }
 ```
 
-Jest i nasz url, który powinniśmy użyć jako argument w funkcji `changeBackground`:
+Також є наш url, який ми повинні використовувати як аргумент у функції `changeBackground`:
 
 ```js
 function getPicture() {
@@ -120,22 +120,21 @@ function getPicture() {
         });
 }
 ```
+Ми вже знаємо, яке фото дня?
 
-Wiemy już jakie jest zdjęcie dnia?
+## До підкорення Марса!
 
-### Na podbój Marsa!
+Тепер зробімо крок далі. Дізнаймось, що відбувається на Марсі. Нам допоможе марсохід, який відважно фотографує свої денні пригоди, а дані з цих експедицій ви можете знайти за цим посиланням: [https://api.nasa.gov/mars-photos/api/v1/rovers/curiosity/photos?sol=1000&api\_key=DEMO\_\_KEY](https://api.nasa.gov/mars-photos/api/v1/rovers/curiosity/photos?sol=1000&api_key=DEMO__KEY)
 
-Teraz zróbmy krok dalej. Sprawdźmy, co słychać na Marsie. Pomoże nam w tym łazik, który dzielnie fotografuje swoje dzienne przygody, a dane z tych wypraw znajdziecie pod tym linkiem: [https://api.nasa.gov/mars-photos/api/v1/rovers/curiosity/photos?sol=1000&api\_key=DEMO\_\_KEY](https://api.nasa.gov/mars-photos/api/v1/rovers/curiosity/photos?sol=1000&api_key=DEMO__KEY)
+Подивіться, тепер над посиланням чекає набагато більше об'єктів, ніж було хвилину тому. Скористаймось ними!
 
-Zobaczcie, że teraz czeka nad pod linkiem o wiele więcej obiektów, niż przed chwilą. Zróbmy z nich użytek!
-
-Zacznijmy od przypisania naszego URLa do zmiennej:
+Почнемо з присвоєння нашої URL-адреси змінній:
 
 ```js
 let urlMars = "https://api.nasa.gov/mars-photos/api/v1/rovers/curiosity/photos?sol=1000&apikey=DEMO_KEY";
 ```
 
-Stwórzmy nową funkcję, która będzie korzystała ze znanego nam narzędzia `fetch API`:
+Створимо нову функцію, яка буде використовувати знайомий інструмент `fetch API`:
 
 ```js
 function getMarsPicture() {
@@ -149,7 +148,7 @@ function getMarsPicture() {
 }
 ```
 
-Wywołajmy funkcję i sprawdźmy, co dzieje się w konsoli. Mamy obiekt z kluczem `photos`\(to mogło chwilę potrwać, zanim coś pojawiło się w konsoli\). Sprawdźmy, co jest w środku, czyli pod kluczem `photos`:
+Викличемо функцію і подивимося, що станеться в консолі. У нас є об'єкт з ключем `photos` \(може знадобитися деякий час, щоб щось з'явилося в консолі\). Давайте перевіримо, що знаходиться всередині, тобто під ключем `photos`:
 
 ```js
 function getMarsPicture() {
@@ -163,7 +162,7 @@ function getMarsPicture() {
 }
 ```
 
-W środku mamy tablicę obiektów. Sprawdźmy teraz, ile jest obiektów:
+Всередині ми маємо масив об'єктів. Тепер перевіримо, скільки в ньому об'єктів:
 
 ```js
 function getMarsPicture() {
@@ -177,7 +176,7 @@ function getMarsPicture() {
 }
 ```
 
-Bardzo dużo! Sprawdźmy, co jest w środku pierwszego z nich:
+Дуже багато! Перевіримо, що знаходиться всередині першого об'єкта:
 
 ```js
 function getMarsPicture() {
@@ -191,26 +190,30 @@ function getMarsPicture() {
 }
 ```
 
-To już jest bliższe naszym oczekiwaniom. Z czegoś takiego możemy coś zrobić :\) Mamy obiekt, w środku jest klucz `img_src` z adresem obrazka. Wykorzystamy go. Zróbmy na naszej stronie galerię. Będzie się ona znajdować w znaczniku `div` o id `content`. Stwórzmy więc zmienną:
+Це вже ближче до наших очікувань. З цього можна зробити щось подібне :\)
+
+У нас є об'єкт, всередині якого знаходиться ключ `img_src` з адресою зображення. Ми його використаємо. Зробімо галерею на нашій сторінці. Вона буде знаходитися в тегу `div` з ідентифікатором `content`. Отже, створимо змінну:
 
 ```js
 let gallery = document.getElementById('content');
 ```
 
-Teraz stwórzmy funkcję `createGallery` z argumentem `dataList`. Będzie to właśnie ta bardzo długa tablica, którą wyciągnęliśmy z `data.photos` :
+Тепер створімо функцію `createGallery` з аргументом `dataList`. Це буде той самий довгий масив, який ми витягли з `data.photos` :
 
 ```js
 function createGallery(dataList) {
 }
 ```
 
-Wewnątrz funkcji za pomocą pętli stworzymy 9 obrazków i dodamy je do strony. W HTML obraz wyświetlamy za pomocą tagu `img`:
+Тепер створімо функцію `createGallery` з аргументом `dataList`. Це буде той самий довгий масив, який ми витягли з `data.photos` :
+
+Усередині функції ми використаємо цикл, щоб створити 9 зображень і додати їх на сторінку. У HTML ми відобразимо зображення за допомогою тегу `img`:
 
 ```markdown
 <img src="adres_obrazka" class="klasa/klasy" alt="co_sie_wyswietli_jesli pod danym adresem nie ma obrazka">
 ```
 
-Tak będzie on wyglądać w HTML. A jak to zrobić za pomocą JS? Zacznijmy od pętli, która będzie się powtarzać 9 razy:
+Ось так це буде виглядати в HTML. А як це зробити за допомогою JS? Почнемо з циклу, який повториться 9 разів:
 
 ```js
 function createGallery(dataList) {
@@ -220,13 +223,13 @@ function createGallery(dataList) {
 }
 ```
 
-Za każdym razem będziemy tworzyć nowy element. Będziemy go przypisywać do zmiennej `img`. Nowy element tworzymy za pomocą:
+Кожного разу ми будемо створювати новий елемент. Присвоїмо його змінній `img`. Створюємо новий елемент за допомогою:
 
 ```js
-document.createElement('nazwa_tagu');
+document.createElement('tag_name');
 ```
 
-U nas nazwą tagu będzie `img`, czyli:
+У нашому випадку ім'я тега буде `img`, тобто:
 
 ```js
 function createGallery(dataList) {
@@ -236,7 +239,7 @@ function createGallery(dataList) {
 }
 ```
 
-Kolejny krok to wstawienie nowego elementu do diva `content`. Służy do tego metoda `appendChild('nazwa_wstawianego_elementu')`
+Наступним кроком буде вставка нового елемента в div `content`. Це робиться за допомогою методу `appendChild('inserted_element_name')`.
 
 ```js
 function createGallery(dataList) {
@@ -247,9 +250,9 @@ function createGallery(dataList) {
 }
 ```
 
-Sprawdźmy naszą stronę.
+Давайте перевіримо наш сайт.
 
-Brakuje naszych ścieżek do obrazków. Wróćmy do funkcji `getMarsPictures`. Mieliśmy tu tablicę z wieloma obiektami w środku, w których mieliśmy potrzebny nam `img_src`. Przypiszmy naszą tablicę do zmiennej:
+Наші шляхи до зображень відсутні. Повернемося до функції `getMarsPictures`. Тут у нас був масив з декількома об'єктами всередині, в якому був потрібний нам `img_src`. Присвоїмо наш масив змінній:
 
 ```js
 function getMarsPicture() {
@@ -263,7 +266,7 @@ function getMarsPicture() {
 }
 ```
 
-Mamy tu listę, którą będziemy wykorzystywać w funkcji `createGallery`. Wywołajmy więc `createGallery` z tym argumentem wewnątrz funckji `getMarsPicture`:
+Тут у нас є список, який ми будемо використовувати у функції `createGallery`. Отже, викличемо `createGallery` з цим аргументом всередині функції `getMarsPicture`:
 
 ```js
 function getMarsPicture() {
@@ -278,7 +281,7 @@ function getMarsPicture() {
 }
 ```
 
-Ok, ale co się kryje pod naszym `pictureList`? Sprawdźmy to za pomocą`console.log`. W funkcji `createGallery` wyświetlmy w konsoli nasz argument `dataList`. Teraz wywołajmy funkcję `getMarsPicture`. W niej wywołujemy też funkcję `createGallery`:
+Гаразд, але що ховається під нашим `pictureList`? Перевіримо це за допомогою `console.log`. У функції `createGallery` виведемо в консоль наш аргумент `dataList`. Тепер викличемо функцію `getMarsPicture`. У ній ми також викликаємо функцію `createGallery`:
 
 ```js
 function createGallery(dataList) {
@@ -290,7 +293,7 @@ function createGallery(dataList) {
 }
 ```
 
-Mamy 9 tablic, w których są nasze obiekty. A my przy każdej pętli potrzebujemy tylko 1 obiekt. Obiekt, którego indeks jest zgodny z naszym i dlatego wyświetlajmy tylko obiekty o indexie równym `i`:
+У нас є 9 масивів, де знаходяться наші об'єкти. І нам потрібен лише 1 об'єкт у кожному циклі. Об'єкт, індекс якого збігається з нашим, тому виводитимемо лише об'єкти з індексом, рівним `i`:
 
 ```js
 function createGallery(dataList) {
@@ -302,7 +305,7 @@ function createGallery(dataList) {
 }
 ```
 
-Jesteśmy bliżej - mamy 9 obiektów. A potrzebujemy tylko wartości, która kryje się pod `img_src`, więc wyświetlmy ją:
+Ми вже ближче &mdash; у нас є 9 об'єктів. І нам потрібне лише значення, яке ховається під `img_src`, тому виводимо його:
 
 ```js
 function createGallery(dataList) {
@@ -314,7 +317,7 @@ function createGallery(dataList) {
 }
 ```
 
-Coraz lepiej. Teraz, zamiast ją wyświetlać, przypiszmy ją do zmiennej i przesuńmy przed dodanie `img` do `gallery`:
+Все краще і краще. Тепер, замість того, щоб виводити його, давайте присвоїмо його змінній і перемістимо перед додаванням `img` до `gallery`:
 
 ```js
 function createGallery(dataList) {
@@ -326,7 +329,7 @@ function createGallery(dataList) {
 }
 ```
 
-Jak teraz dodać `imgPath` do naszego elementu `img`? Za pomocą właściwości `src`. Jest podobna do właściwości `style`. Musimy jej przypisać wartość:
+Як тепер додати `imgPath` до нашого елемента `img`? За допомогою властивості `rc`. Вона схожа на властивість `style`. Нам потрібно присвоїти їй значення:
 
 ```js
 function createGallery(dataList) {
@@ -339,5 +342,4 @@ function createGallery(dataList) {
 }
 ```
 
-Wywołajmy teraz funkcję `getMarsPictures` i sprawdźmy, co słychać na Marsie! 
-
+Тепер давайте викличемо функцію `getMarsPictures` і подивимося, що відбувається на Марсі!

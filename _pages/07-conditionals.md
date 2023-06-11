@@ -1,22 +1,22 @@
 ---
-title: 7. Instrukcje warunkowe
+title: 7. Операції з умовами
 layout: post
 ---
 
-Niektóre wydarzenia dzieją się tylko wtedy, gdy zostanie spełniony jakiś warunek. Np. woda zacznie wrzeć, gdy osiągnie temperaturę 100 stopni, a drzwi otworzysz tylko wtedy, gdy masz pasujący klucz. Podobnie dzieje się w języku JavaScript - instrukcja warunkowa wykonuje wybrany kod, w zależności od tego czy wartość danego wyrażenia jest logiczną prawdą \(true\) czy logicznym fałszem \(false\).
+Деякі події відбуваються лише тоді, коли виконується певна умова. Наприклад, вода закипить, коли досягне температури 100 градусів, а двері можна відчинити, тільки якщо у вас є відповідний ключ. Те ж саме відбувається і в JavaScript: умовний оператор виконує код на ваш вибір, залежно від того, чи є значення виразу логічною істиною \(true\) або логічною хибою \(false\).
 
-### if...else...
+## if... else...
 
-Jak wygląda instrukcja warunkowa? Kluczowym elementem jest wyrażenie **if:**
+Як виглядає умовна конструкція? Ключовим елементом є оператор **if**:
 
 ```js
-if (warunek) {
+if (умова) {
 
-    ...polecenie, które wykonuje się, gdy warunek jest spełniony
+    ...команда, яка виконується при виконанні певної умови
 }
 ```
 
-np.
+Наприклад:
 
 ```js
 let x = 34;
@@ -32,44 +32,44 @@ if (x < 100) {
  }
 ```
 
-Kolejny element instrukcji warunkowej to **else**, czyli polecenie, które wykonuje się jeśli jednak warunek nie jest spełniony.
+Наступним елементом є умовний оператор **else**, тобто команда, яка виконується, якщо умова не виконується.
 
-np.
+Наприклад:
 
 ```js
 let x = 34;
 
 if (x < 100) {
-     console.log('Liczba jest mniejsza od 100');
+     console.log('Число менше 100');
 } else {
-     console.log('Liczba jest większa od 100');
+     console.log('Число більше 100');
 }
 
 
 if (x < 10) {
-     console.log('Liczba jest mniejsza od 10');
+     console.log('Число меньше 10');
 } else {
-     console.log('Liczba jest większa od 10');
+     console.log('Число більше 10');
 }
 ```
 
-Możemy też sprawdzać kilka warunków jeden po drugim. Służy do tego **else if**,
+Ми також можемо перевірити кілька умов одна за одною. Для цього використовується **else if**:
 
 ```js
 if (x < 10) {
-     console.log('Liczba jest mniejsza od 10');
+     console.log('Число меньше 10');
 }  else if (x > 10) {
-     console.log('Liczba jest większa od 10');
+     console.log('Число більше 10');
 } else {
-     console.log('Liczba jest równa 10');
+     console.log('Число дорівнює 10');
 }
 ```
 
-W swoim pliku JS stwórz dwie zmienne o nazwach a i b. Przypisz do nich dwie różne liczby. Następnie zapisz następujący warunek: jeśli a jest większe od b, w konsoli powinien ukazać się napis "a jest większe od b". Jeśli b jest większe, w konsoli powinnaś zobaczyć "b jest większe od a".
+Створи у своєму JS-файлі дві змінні з іменами a та b. Присвой їм два різних числа. Потім напиши наступну умову: якщо a більше b, то в консолі повинно бути виведено "a більше b". Якщо b більше, в консолі повинно бути виведено "b більше за a".
 
 ### switch
 
-**Warunki można również sprawdzać za pomocą instrukcji switch.**
+**Умови також можна перевіряти за допомогою команди switch.**
 
 ```js
 let language = 'Spanish';
@@ -92,52 +92,48 @@ switch (language) {
 }
 ```
 
-Zauważ, że każdy przypadek kończy się słowem **break.** Break przerywa wykonywanie instrukcji switch. Oznacza to, że jeśli któryś ze wskazanych przypadków zostanie spełniony, dalsze porówniania nie będą już wykonywane. Jeżeli pominiemy to słowo, wówczas nawet przy pomyślnym przyrównaniu zostaną wykonane kolejne sprawdzenia. Naszą instrukcję switch kończy specjalny przypadek **default**, który będzie wybierany, gdy wszystkie inne przypadki będą błędne.
+Зверни увагу, що кожен варіант закінчується командою **break**. Break перериває виконання оператора switch. Це означає, що при виконанні будь-якого з вказаних випадків подальші порівняння виконуватися не будуть. Якщо ми опустимо це слово, то навіть якщо порівняння буде успішним, будуть виконані подальші перевірки. Наша інструкція switch закінчується спеціальним випадком **default**, який буде обрано, коли всі інші варіанти будуть неправильними.
 
-### Zadanie:
+### Завдання
 
-Stwórz w swoim pliku JS zmienną o nazwie `weather` i przypisz do niej wartość "sun". Następnie, używając instrukcji `switch` spraw, aby w konsoli ukazał się następujący tekst:
+Створи у своєму JS-файлі змінну з ім'ям `weather` і присвойте їй значення "sun". Потім, використовуючи команду `switch`, зробіть так, щоб в консолі з'явився наступний текст:
 
-* gdy zmienna `weather` jest równa "sun" - "It's sunny! 🌞"
-* gdy zmienna `weather` jest równa "rain" = "It's raining! 🌧️"
-* gdy zmienna `weather` jest równa "wind" = "It's windy! 🌬️"
+* коли змінна `weather` дорівнює "sun" &mdash; "It's sunny! 🌞"
+* коли змінна `weather` дорівнює "rain" &mdash; "It's raining! 🌧️"
+* коли змінна `weather` дорівнює "wind" &mdash; "It's windy! 🌬️"
 
-Teraz przypisz do zmiennej `weather` wartość "rain" i zobacz, jak zmienia się tekst w konsoli. To samo sprawdź przypisując do niej wartość "wind".
+Тепер присвой змінній `weather` значення "rain" і подивись, як зміниться текст у консолі. Перевірте те ж саме, присвоївши їй значення "wind".
 
-**Instrukcja if..else... korzysta z operatorów porównania**
+**Умова if..else... використовує оператори порівняння**
 
-Nie zawsze wszystko jest albo większe albo mniejsze, albo równe. Może przecież być większe lub równe, mniejsze lub równe, itp. W JS mamy do dyspozycji następujące operatory porównania:
+Не завжди щось є або більшим за, або меншим за, або рівним до. Зрештою, вона може бути більше або дорівнювати, менше або дорівнювати і т.д. В JS ми маємо в своєму розпорядженні наступні оператори порівняння:
 
 `let x = 34;`
 
-| Operator | Opis | Równanie | Zwróci |
+| Оператор | Опис | Рівняння | Поверне |
 | :--- | :--- | :--- | :--- |
-| == | równe | x == 56 | false |
-| != | różne | x != 56 | true |
-| === | równa wartość i taki sam typ danych | x === 34 | true |
-|  |  |  |  |
+| == | дорівнює | x == 56 | false |
+| != | не дорівнює | x != 56 | true |
+| === | дорівнює і має однаковий тип даних | x === 34 | true |
 |  |  | x === "34" | false |
-| !== | różne wartości lub różny typ danych | x !== "34" | true |
+| !== | не дорівнює і має різний тип даних | x !== "34" | true |
 |  |  | x !== 34 | false |
-| &gt; | większe od | x &gt; 67 | false |
-| &lt; | mniejsze od | x &lt; 67 | true |
-| &gt;= | większe bądź równe od | x &gt;= 56 | false |
-| &lt;= | mniejsze bądź równe od | x &lt;= 56 | true |
+| &gt; | більше | x &gt; 67 | false |
+| &lt; | меньше | x &lt; 67 | true |
+| &gt;= | більше або дорівнює | x &gt;= 56 | false |
+| &lt;= | менше або дорівнює | x &lt;= 56 | true |
 
-Zwróć uwagę, że w JS pojedynczy znak równości przypisuje wartość np. do zmiennej. Z kolei podwójny znak równania == to porównanie dwóch wartości, a dokładniej sprawdzenie, czy są takie same.
+Зауваж, що в JS одинарний знак рівності, наприклад, присвоює значення змінній. А подвійний знак рівності == вже служить для порівняння двох значень, або, точніше, для перевірки, чи є вони однаковими.
 
-**Możemy też spotkać operatory logiczne:**
+Ми також можемо зустріти логічні оператори:
 
 `let x = 34;`
 
 `let y = 13;`
 
-| Operator | Opis | Przykład | Wynik |
+| Оператор | Опис | Приклад | Результат |
 | :--- | :--- | :--- | :--- |
-| && | and \(i\) | \(x &lt; 100 && y &gt; 10\) | Prawda \(x jest mniejsze od 100 **i **y jest większe od 10\) |
-| II | or \(lub\) | \(x &gt; 80 II y &gt; 10\) | Prawda, bo x nie jest większe od 80, ale y jest większe od 10 |
-| ^ | xor \(jeden z, ale nie dwa równocześnie\) | \(x === 34 ^ y === 13\) | Fałsz, bo obydwa są prawdziwe |
-| ! | not \(negacja\) | !\(x == y\) | Prawda, bo negujemy to, że x == y |
-
-
-
+| && | and \(i\) | \(x &lt; 100 && y &gt; 10\) | Істина \(x меньше 100 **i** y більше 10\) |
+| II | or \(або\) | \(x &gt; 80 II y &gt; 10\) | Істина, тому що x не більше 80, але y більше 10 |
+| ^ | xor \(один з, але не два одночасно\) | \(x === 34 ^ y === 13\) | Хиба, тому що обидва значення правильні |
+| ! | not \(заперечення\) | !\(x == y\) | Істина, бо заперечуємо, що x == y |

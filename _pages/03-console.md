@@ -1,39 +1,39 @@
 ---
-title: 3. Konsola przeglądarki
+title: 3. Браузерна консоль
 layout: post
 ---
 
-
-Na początku swojej przygody z językiem JavaScript warto zaprzyjaźnić się z konsolą przeglądarki. Jest to miejsce, gdzie jesteś w stanie szybko przetestować kod, ale też znaleźć informacje o błędach, które się pojawiły. W przeglądarce Chrome konsolę otwieramy za pomocą Ctrl+Shift+J, w Firefoxie Ctrl+Shift+K. W obu działa skrót F12 ;) Możesz też kliknąć prawym przyciskiem myszy w dowolnym miejscu otwartej strony, wybrać opcję "Zbadaj"/"Inspect", a potem przejść od zakładki "Console", gdy otworzą się narzędzia deweloperskie.  
+На початку твого знайомства з JavaScript варто потоваришувати з консоллю браузера. Це місце, де ти можеш швидко протестувати свій код, а також знайти інформацію про помилки, що виникли. У браузері Chrome консоль відкривається поєднанням клавіш Ctrl+Shift+J, у Firefox - Ctrl+Shift+K. У обох браузерах працює також клавіша F12 ;) Крім того, ти можеш натиснути правою кнопкою миші в будь-якому місці відкритої сторінки, вибрати "Explore"/"Inspect", а потім перейти з вкладки "Console", коли відкриються інструменти розробника.
 
 ![](/poznan/assets/devtools.png)
 
-Wpisz w konsoli `console.log('Hello World!');` i naciśnij klawisz Enter.
-Twoja wiadomość powinna się wyświetlić pod spodem. Teraz wpisz `console.log(33+5);`
+Введи `console.log('Hello World!');` і натисни Enter. Твоє повідомлення має з'явитися внизу. Тепер введи `console.log(33+5);`
 
-Właśnie wykonałaś swoje pierwsze operacje w JavaScript!
+Ти щойно виконала свої перші операції на JavaScript!
 
-To, co wpisujesz bezpośrednio z konsoli \(z poziomu przeglądarki\), nie zostanie zapisane. Jednak jest to bardzo przydatne, gdy chcemy sprawdzić jakieś wartości np. zmiennych. Kiedy chcemy, by coś cały czas było pokazywane w konsoli, będziemy musieli wprowadzić kod w naszym pliku JavaScript, a potem sprawdzić konsolę. Konsola jest bardzo ważnym narzędziem przy pracy z kodem. To w niej będziemy sprawdzać, czy dobrze przypisałyśmy wartości do zmiennych, czy nasze funkcje dobrze działają, itd. Ale najpierw - treść strony!
+Те, що ти введеш безпосередньо з консолі \(з браузера\), не буде збережено. Однак це дуже корисно, коли ми хочемо перевірити деякі значення, наприклад, змінних. Якщо ми хочемо, щоб щось постійно відображалося в консолі, нам доведеться ввести код у наш JavaScript-файл, а потім перевірити його в консолі. Консоль є дуже важливим інструментом при роботі з кодом. Саме там ми перевіримо, чи правильно ми присвоїли значення змінним, чи добре працюють наші функції тощо. Але спочатку &mdash; зміст сторінки!
 
-Przejdźmy teraz do zakładki "Elements". Możesz tu zobaczyć całą strukturę swojej strony, czyli jej cały kod HTML oraz CSS. HTML odpowiada na szkielet naszej strony, tzn. informuje przeglądarkę, jakie elementy mają znaleźć się na stronie \(np. nagłówki, obrazki, bloki tekstu\). Z kolei CSS odpowiada za wygląd elementów, to reguły CSS powiedzą przeglądarce, np. jaki kolor ma mieć nagłówek.
+Перейдемо на вкладку "Елементи" \("Elements"\) . Тут ви можете побачити всю структуру вашої сторінки, тобто весь її HTML і CSS код. HTML відповідає за каркас нашої сторінки, тобто він вказує браузеру, які елементи включити на сторінку \(наприклад, заголовки, зображення, блоки тексту\). CSS, з іншого боку, відповідає за зовнішній вигляд елементів; саме правила CSS вказують браузеру, наприклад, якого кольору повинен бути заголовок.
 
 ![](/poznan/assets/elements.png)
 
-Kliknij prawym przyciskiem myszy w dowolny element strony i wybierz "Zbadaj". Możesz go teraz łatwo znaleźć w strukturze strony. Kiedy najedziesz kursorem na część kodu HTML, ten element, za który dany fragment kodu odpowiada, zostanie zaznaczony. Dzięki temu możesz łatwo sprawdzić, jaki kod odpowiada za wybrane elementy.
+Натисни правою кнопкою миші на будь-якому елементі сторінки і вибери "Дослідити". Тепер ти можеш легко знайти його в структурі сторінки. Коли ти наведеш курсор на фрагмент HTML-коду, елемент, за який відповідає цей фрагмент коду, буде виділено. Це дозволяє легко побачити, який код відповідає за вибрані елементи.
 
 ![](/poznan/assets/code-part.png)
 
-W tym miejscu powinnyście też znaleźć zakładkę "Styles" gdzie znajdziecie wszystkie style elementu który właśnie zaznaczyłyście. 
+Тут ти також знайдеш вкладку "Стилі" \("Styles"\), де зможеш побачити всі стилі елемента, які щойно виділили.
 
 ![](/poznan/assets/styles.png)
 
-Przykładowo: zaznaczony przez nas tekst **KOBIECA STRONA JAVASCRIPTU** ma:  
-`background: #ffc303;`  
-`padding: 2px 10px;`
+Наприклад: текст  **KOBIECA STRONA JAVASCRIPTU**, який ми вибрали, має стиль:
 
-Zmieńmy wartość `background` na `red`;
+```
+background: #ffc303; 
+padding: 2px 10px;
+```
+
+Давайте змінимо значення `background` na `red;`.
 
 ![](/poznan/assets/bg-red.png)
 
-Tło naszego tekstu zmieniło kolor! Warto dodać, że te zmiany nie zapisują się na stałe. Jeśli teraz odświeżymy przeglądarkę, nasza zmiana koloru zniknie. Takie modyfikacje bezpośrednio w przeglądarce służą do sprawdzenia, jak wyglądałaby nasza strona, gdyby miała dane style CSS. Aby nasz nagłówek miał cały czas czerwone tło, musiałybyśmy zrobić zmianę w pliku z kodem.
-
+Тло нашого тексту змінило колір! Варто зазначити, що ці зміни не зберігаються назавжди. Якщо ми перезавантажимо браузер, зміна кольору зникне. Такі зміни безпосередньо в браузері використовуються для того, щоб побачити, як би виглядала наша сторінка, якби вона мала задані стилі CSS. Для того, щоб наш хедер завжди мав червоний фон, нам потрібно було б внести зміни у файл з кодом.

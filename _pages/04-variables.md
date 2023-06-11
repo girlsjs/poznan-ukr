@@ -1,29 +1,29 @@
 ---
-title: 4. Zmienne
+title: 4. Змінні
 layout: post
 ---
 
-W poprzednim rozdziale w konsoli przeglądarki wpisałyśmy proste działanie matematyczne 33 + 5. Jednak gdybyśmy tego samego równania chciały używać kilkakrotnie w różnych miejscach kodu, byłoby to bardzo niewygodne. Dlatego korzystamy ze zmiennych. Zmienna jest to nazwa zdefiniowana przez nas z określoną wartością. Zmienne pozwalają nam przechowywać fragmenty kodu, których potem możemy używać. W zmiennej można zapisać np. wynik równania, które przed chwilą przypomniałyśmy.
+У попередньому розділі ми вводили просту математичну операцію 33 + 5 в консолі браузера. Однак, якби ми захотіли використовувати одне і те ж рівняння кілька разів в різних місцях коду, це було б дуже незручно. Саме тому ми використовуємо змінні. Змінна &mdash; це ім'я, якому ми присвоюємо певне значення. Змінні дозволяють нам зберігати фрагменти коду, які ми можемо використовувати пізніше. У змінній можна зберігати, наприклад, результат рівняння, яке ми щойно згадали.
 
-Jak zdefiniować taką zmienną?
+Як створити таку змінну?
 
 ```js
 var sum = 33 + 5;
 ```
 
-`var` to instrukcja, która definiuje zmienną. `sum` to nazwa naszej zmiennej. `33 + 5` to działanie, którego wynik będzi wartością naszej zmiennej. Kiedy w konsoli wpiszemy `var sum = 33 + 5;` a następnie wpiszemy `sum`, konsola zwróci nam 38. Od tej chwili dla języka JavaScript `sum` to to samo co `38`.
+`var` &mdash; це інструкція, яка визначає змінну. `sum` &mdash; ім'я нашої змінної. `33 + 5` &mdash; це дія, результатом якої буде значення нашої змінної. Коли ми наберемо `var sum = 33 + 5;`, а потім впишемо `sum`, консоль поверне &mdash; `38`. Відтепер, для JavaScript, `sum` &mdash; це те ж саме, що і `38`.
 
-### var
+## var
 
-`var` pochodzi od angielskiego "variable" i oznacza zmienną. Każda definicja zmiennej składa się ze słówka `var`, za którym stoi nazwa danej zmiennej. Nazwy zmiennych mogą składać się z liter, cyfr i niektórych znaków specjalnych, zazwyczaj zaczynają się małą literą. Nazwy zmiennych powinny nam coś mówić. Tzn. nie nazywajmy zmiennych `xyz`, ale właśnie `sum`, `wynik` itp. Dzięki temu łatwiej będzie nam się odnaleźć w naszym kodzie.
+`var` походить від англійського "variable" і означає "змінна". Кожне визначення змінної складається зі слова var, за яким слідує ім'я змінної. Імена змінних можуть складатися з літер, цифр і деяких спеціальних символів, і зазвичай починаються з малої літери. Назви змінних повинні нам про щось говорити. Тобто давайте не будемо називати змінні `xyz`, а краще &mdash; `sum`, `result` тощо. Так нам буде легше орієнтуватися в нашому коді.
 
-To, że do zmiennej przypisałyśmy daną wartość, nie znaczy, że musi ona na zawsze już być jej równa. Mamy możliwość nadpisania tej zmiennej, czyli przypisania jej nowej wartości. Wystarczy wpisać np. `sum = 99`. Od tej chwili dla języka JavaScript `sum` będzie oznaczało to samo co 99. Kiedy nadpisujemy wartość zmiennej, nie zapisujemy`var` przy jej nazwie. `var` używamy tylko przy definiowaniu zmiennej, czyli przy zapisaniu jej po raz pierwszy. Później już posługujemy się samą nazwą zmiennej.
+Якщо ми присвоїли змінній значення, це не означає, що воно повинно дорівнювати йому назавжди. У нас є можливість перезаписати цю змінну, тобто присвоїти їй нове значення. Просто введіть, наприклад, `sum = 99`. Відтепер для JavaScript `sum` буде означати те ж саме, що і `99`. Коли ми перезаписуємо значення змінної, ми не пишемо `var` поруч з її ім'ям. Ми використовуємо `var` тільки тоді, коли визначаємо змінну, тобто коли записуємо її вперше. Після цього ми просто використовуємо саме ім'я змінної.
 
-### let i const®
+## let i const
 
-Obecnie używa się również standardu ES6, który jest nowszym standardem języka JavaScript. Zgodnie z nim, zmienne możemy tworzyć przez użycie słowa `let` albo `const`.
+Сьогодні ми також використовуємо стандарт ES6, який є більш новим стандартом для JavaScript. Згідно з цим стандартом, змінні можна створювати за допомогою `let` або `const`.
 
-Jeśli stworzymy zmienną przez `let`, możemy jej przypisywać wartość dowolną ilość razy, tzn. ją nadpisywać \(tak jak `var` omówione wyżej\). Wtedy możemy mieć taki kod:
+Якщо ми створюємо змінну за допомогою `let`, ми можемо присвоювати їй значення будь-яку кількість разів, тобто перезаписувати її \(так само, як `var`, про яку ми говорили вище\). Тоді ми можемо написати такий код:
 
 ```js
 let sum;
@@ -31,18 +31,17 @@ sum = 15;
 sum = 20;
 ```
 
-Z kolei, gdy stworzymy zmienną przez `const`, jest ona stała i nie możemy przypisać jej innej wartości, niż ta, którą przypisałyśmy na samym początku. Próba przypisania `const` nowej wartości sprawi, że zobaczymy błąd w konsoli.
+З іншого боку, коли ми створюємо змінну за допомогою `const`, вона є константою, і ми не можемо присвоїти їй значення, відмінне від того, яке ми присвоїли на самому початку. Спроба присвоїти `const` нове значення призведе до появи помилки в консолі.
 
 ```js
 const sum = 15;
-sum = 20; // wyświetli błąd w konsoli z informacją TypeError: Assignment to constant variable.
+sum = 20; // виведе помилку в консолі з повідомленням TypeError: Assignment to constant variable.
 ```
 
-Używanie `let` i `const` w kodzie jest bardzo przydatne, ponieważ możemy rozróżnić wartości, które mogą być nadpisane od tych, które muszą pozostać takie same przez cały kod. Załóżmy na przykład, że mamy jakiś przelicznik, który zawsze jest taki sam. Użyjemy do jego zdefiniowana `const` i dzięki temu jesteśmy pewne, że jego wartość nie zostanie nadpisana.
+Використання `let` і `const` в коді дуже корисно, тому що ми можемо розрізняти значення, які можна перевизначати, і ті, які повинні залишатися незмінними в усьому коді. Припустимо, наприклад, що у нас є елемент, який завжди однаковий. Для його визначення ми використаємо `const` і таким чином будемо впевнені, що його значення не буде перезаписано.
 
-W związku z benefitami jakie dają nam różnice między `let` i `const`, dobrze jest je stosować w kodzie zamiast tworzenia wszystkich zmiennych z użyciem `var`.
+Через переваги, які дає нам різниця між `let` і `const`, варто використовувати їх у своєму коді замість того, щоб створювати всі змінні за допомогою `var`.
 
-### Zadanie
+### Завдання
 
-Stwórz teraz w konsoli dwie zmienne z dowolnymi liczbami. Jedną przy użyciu `let`, drugą przy użyciu `const`. Spróbuj nadpisać obie wartości i zobacz, co wyświetli się w konsoli.
-
+Створи у консолі дві змінні з довільними числами. Одну за допомогою `let`, іншу за допомогою `const`. Спробуй перезаписати обидва значення і подивись, що відобразиться в консолі.

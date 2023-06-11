@@ -1,27 +1,27 @@
 ---
-title: 9. Tablice
+title: 9. Масиви
 layout: post
 ---
 
-Zmienne, które dotychczas poznałaś, zawierały tylko jeden element - string, liczbę, czy wartość logiczną. Czasami jednak musimy skorzystać z całej listy danych. Do ich przechowywania służą nam tablice.
+Змінні, про які ми говорили раніше, містили лише один елемент &mdash; рядок, число або логічне значення. Однак іноді нам потрібно використовувати цілий список даних. Для їх зберігання ми використовуємо масиви.
 
 ```js
-let tablica = ["pomarancza", 34, true, "mandolina", 45 [67, 56, "czerwony"]];
+let array = ["апельсин", 34, true, "мандоліна", 45 [67, 56, "червоний"]];
 ```
 
-Tablicę tworzymy zapisując dane pomiędzy kwadratowymi nawiasami i oddzielając te elementy od siebie przecinkami. W tablicy możemy przechowywać różne typy danych: stringi, liczby, zmienne typu logicznego, a nawet inne listy.
+Ми створюємо масив, записуючи дані між квадратними дужками та розділяючи ці елементи комами. У масиві можна зберігати різні типи даних: рядки, числа, змінні логічного типу і навіть інші списки.
 
-Stwórzmy np. listę znajomych:
+Створимо, наприклад, перелік знайомих:
 
 ```js
-let friends = ["Michał", "Marta", "Mikolaj", "John", "Natalia", "Ania"];
+let friends = ["Michał", "Marta", "Mykolaj", "John", "Natalia", "Ania"];
 ```
 
-Aby wyświetlić element listy odwołujemy się do listy i pozycji danego elementu.
+Щоб відобразити елемент списку, ми посилаємося на список і на позицію елемента.
 
-UWAGA!
+ЗВЕРНІТЬ УВАГУ!
 
-Kolejność elementów liczymy od 0. Tak więc:
+Порядок елементів ми відраховуємо від 0. Таким чином:
 
 ```js
 console.log(friends[0]);
@@ -31,18 +31,18 @@ console.log(friends[3]);
 >>> John
 ```
 
-W swoim pliku JS stwórz teraz tablicę o nazwie "group", która zawiera imiona wszystkich osób z grupą, z którą pracujesz na warsztacie. Następnie wypisz w konsoli imię pierwszej zapisanej osoby.
+Тепер створи у своєму JS-файлі масив з назвою "group", який містить імена всіх людей з групи, з якою ти працюєш на воркшопі. Потім випиши ім'я першої людини, що зберігається в консолі.
 
-Podobnie jak stringi, długość tablicy możemy ustalić dzięki właściwości **length**
+Як і для рядків, ми можемо встановити довжину масиву завдяки властивості **length**
 
 ```js
 console.log(friends.length); 
 >>> 6
 ```
 
-Teraz wypisz w konsoli długość tablicy z imionami osób z Twojej grupy, a następnie wyloguj imię osoby, która jest zapisana jako ostatnia.
+Тепер виведіть у консоль довжину масиву з іменами людей у вашій групі, а потім виведіть ім'я людини, яке збережене останнім.
 
-Do dodawania nowego elementu służy metoda **push**:
+Для додавання нового елемента використовуй метод **push**:
 
 ```js
 friends.push('Kasia');
@@ -51,11 +51,11 @@ console.log(friends);
 >>> ["Michał", "Marta", "Mikolaj", "John", "Natalia", "Ania","Kasia"]
 ```
 
-Za jej pomocą dodajemy nowy element na końcu tablicy.
+Він використовується для додавання нового елемента в кінець масиву.
 
-Dodaj do swojej tablicy "group" jeszcze jedno dowolne imię używając do tego metody `push`, a następnie wypisz je w konsoli.
+Додайте ще одне довільне ім'я до вашого "групового" масиву за допомогою методу `push` і виведіть його у консоль.
 
-Możemy również nadpisać istniejący element tablicy o określonej pozycji:
+Ми також можемо перезаписати існуючий елемент масиву з певною позицією:
 
 ```js
 friends[2] = "Tomek";
@@ -64,11 +64,11 @@ console.log(friends);
 >>> ["Michał", "Marta", "Tomek", "John", "Natalia", "Ania","Kasia"]
 ```
 
-Nadpisz ostatnio dodane do swojej tablicy imię innym. Raz jeszcze wypisz ostatnie imię w konsoli.
+Заміни ім'я, яке додали в масив останнім, іншим іменем. Знову виведи імена в консолі.
 
-Różne tablice możemy dodać do siebie. Stwórz tablicę z imionami przyjaciół z pracy i drugą z imionami przyjaciół z imprez.
+Ми можемо додавати різні дошки одна до одної. Створи масив з іменами друзів з роботи і масив з іменами друзів з вечірок.
 
-Aby stworzyć tablicę w której znajdą się imiona wszystkich Twoich przyjaciół użyjemy metody `concat`
+Для створення масиву з іменами всіх ваших друзів ми скористаємося методом `concat`.
 
 ```js
 let work_friends = ["Michał", "Marta", "Tomek", "John", "Natalia", "Ania","Kasia"];
@@ -80,9 +80,9 @@ console.log(all_friends);
 >>> ["Michał", "Marta", "Tomek", "John", "Natalia", "Ania","Kasia", "Asia", "Kamil", "Bartek", "Ola", "Weronika", "Czarek"]
 ```
 
-Sprawdź w konsoli, jak wygląda nowa tablica powstała za pomocą `concat`.
+Перевірте в консолі, як виглядає новий масив, створений за допомогою `concat`.
 
-By "pobrać" kawałek tablicy używamy metody `slice`. Wymaga ona określenia od którego elementu chcemy ciąć i na którym chcemy skończyć
+Для того щоб "отримати" частину масиву, ми використовуємо метод `slice`. Він вимагає вказати, з якого елемента потрібно вирізати і на якому елементі потрібно зупинитися.
 
 ```js
 let friends = ["Michał", "Marta", "Tomek", "John", "Natalia", "Ania","Kasia"];
@@ -92,12 +92,12 @@ console.log(part);
 >>> Marta, Tomek, John
 ```
 
-Stwórz teraz jeszcze jedną tablicę, której elementami będą pierwsze i drugie imię z tablicy "group". Użyj do tego metody `slice`.
+Тепер створимо ще один масив, елементами якого будуть перше і друге ім'я з масиву `group`. Для цього скористайся методом `slice`.
 
-Do usuwania, lub zamieniania kawałka tablicy służy metoda `splice`
+Використовуй метод `splice` для видалення або заміни частини масиву.
 
 ```js
-tablica.splice(od którego elementu, ile elementów usunąć, co tam wstawić w zmian)
+array.splice(з якого елемента, скільки елементів видалити, що туди додати на заміну)
 
 let friends = ["Michał", "Marta", "Tomek", "John", "Natalia", "Ania","Kasia"];
 
@@ -106,7 +106,7 @@ console.log(friends);
 >>> Michał, Marta, John, Natalia, Ania, Kasia,
 ```
 
-Zaczynam od pozycji 2, usuwam jeden element, żadnego nie dodaję.
+Починаємо з позиції 2, видаляємо один елемент, не додаємо жодного.
 
 ```js
 let friends = ["Michał", "Marta", "Tomek", "John", "Natalia", "Ania","Kasia"];
@@ -116,15 +116,15 @@ console.log(friends);
 >>> Michał, Marta, Patrycja, John, Natalia, Ania, Kasia,
 ```
 
-Zaczynam od elementu na 2 pozycji, usuwam jeden element, dodaje element "Patrycja".
+Я починаю з елемента на 2-й позиції, видаляю один елемент, додаю елемент "Patricia".
 
-Usuń teraz za pomocą `splice` pierwsze imię z tablicy "group" i w jego miejsce wstaw inne, dowolne imię.
+Тепер видаліть за допомогою `splice` перше ім'я з масиву `group` і вставте на його місце будь-яке інше ім'я.
 
-**UWAGA:** `friends.slice` nie modyfikuje tablicy `friends`, zwraca tylko jej określone elementy. `friends.splice` modyfikuje tablicę `friends`. Jest to ważna różnica. 
+**Зверни увагу**: `friends.slice` не змінює масив `friends`, він лише повертає його вказані елементи. `friends.splice` модифікує масив `friends`. Це важлива відмінність.
 
-### Wyszukiwanie elementu
+## Пошук елементу
 
-do wyszukiwania pozycji elementu służy metoda indexOf. Zwraca ona indeks danego elementu lub -1 jeśli go nie znajdzie
+Метод `indexOf` використовується для пошуку позиції елемента. Він повертає індекс заданого елементу або -1, якщо його не знайдено.
 
 ```js
 let friends = ["Michał", "Marta", "Tomek", "John", "Natalia", "Ania","Kasia"];
@@ -136,11 +136,11 @@ if (friends.indexOf('Marta') !== -1) {
 }
 ```
 
-Korzystając z `indexOf()` sprawdź jaką pozycję ma Twoje imię w tablicy "group".
+За допомогою `indexOf()` перевір, яку позицію займає твоє ім'я у масиві "group".
 
-### Pętla po tablicy
+## Циклічний обхід масиву
 
-Pętla to doskonały sposób przechodzenia (iterowania) po elementach tablicy. Wykorzystajmy ją do wypisania naszych znajomych. Aby wypisać jakiś element tablicy określamy jego indeks:
+Цикл &mdash; це чудовий спосіб обходу (ітерації) елементів масиву. Використаймо його для виписування наших друзів. Щоб виписати елемент масиву, ми вказуємо його індекс:
 
 ```js
 let friends = ["Michał", "Marta", "Tomek", "John", "Natalia", "Ania","Kasia"];
@@ -152,15 +152,15 @@ console.log(friends[3]);
 ....
 ```
 
-Ale pojawiają się dwa problemy. Po pierwsze, będzie to mało optymalne. Po drugie, co jeśli nie wiem ile jest elementów na liście i jak długo mam powtarzać ten sam kod?
+Але виникають дві проблеми. По-перше, це буде неоптимально. По-друге, що робити, якщо я не знаю, скільки елементів у списку і як довго повторювати один і той же код?
 
-Spróbujmy więc pętli `for`:
+Тому спробуймо цикл `for`:
 
-inicjacja licznika - pierwsza pozycja na liście ma index 0, więc zaczynamy liczyć o 0, `let i = 0;`
+створюємо лічильник &mdash; перший елемент списку має індекс 0, тому починаємо відлік з 0, `let i = 0;`.
 
-koniec licznika - pętlę powtarzamy aż przejdzie po wszystkich elementach listy. Liczbę elementów określamy za pomocą właściwości `length`. Czyli powtarzamy pętlę, dopóki licznik jest mniejszy od liczby moich przyjaciół: `i < friends.length`
+завершення циклу &mdash; повторюємо цикл до тих пір, поки не пройдемо всі елементи списку. Кількість елементів задаємо з допомогою властивості `length`. Тобто, поки лічильник не стане меншим за кількість друзів: `i < friends.length`.
 
-powiększanie/zmniejszanie licznika - po każdej pętli idziemy do kolejnej osoby czyli zwiększamy licznika o 1,`i += 1;`
+збільшуємо/зменшуємо лічильник &mdash; після кожного циклу переходимо до наступної людини, тобто збільшуємо лічильник на 1, `i += 1;`.
 
 ```js
 let friends = ["Michał", "Marta", "Tomek", "John", "Natalia", "Ania","Kasia"];
@@ -168,12 +168,13 @@ for (let i = 0; i < friends.length; i += 1) {
     console.log(friends[i]);
 }
 ```
+Потренуймось далі, повернувшись до нашого повідомлення. Припустимо, ми хочемо його персоналізувати та відобразити, наприклад.
 
-Przećwiczmy to jeszcze wracając do naszej wiadomości. Powiedzmy, że chcemy ją spersonalizować i wyświetlić, np.
+"Привіт, Міхале! Ми раді вітати тебе на girls.js!"
 
-"Cześć Michał! Miło nam Cię powitać na girls.js!"
+Або польською: "Cześć Michał! Miło nam Cię powitać na girls.js!"
 
-Wystarczy do naszej wcześniejszej pętli dodać brakujący tekst powitania:
+Все, що нам потрібно зробити, це додати відсутній текст привітання до нашого попереднього циклу:
 
 ```js
 let friends = ["Michał", "Marta", "Tomek", "John", "Natalia", "Ania","Kasia"];
@@ -182,16 +183,14 @@ for(let i = 0; i < friends.length; i+=1) {
 }
 ```
 
-### Zadanie:
+### Завдання 1
 
-Używając pętli `for` spraw, aby w konsoli pojawił się napis witający na girls.js wszystkie osoby zapisane w Twojej tablicy "group". Tekst ma być następujący: "Cześć \[tu imię osoby\]! Miło nam Cię powitać na girls.js!".
+Використовуючи цикл `for`, зробіть так, щоб у консолі з'явився текст привітання girls.js усім людям, які зберігаються у вашому масиві "group". Текст повинен бути наступним: "Cześć \[ім'я людини\]! Miło nam Cię powitać na girls.js!".
 
+### Завдання 2
 
+Використовуючи цикл, виведи усі голосні літери з речення:
 
-### Zadanie:
+"Біля річки під кущем жила качка, що крякала, але замість того, щоб плавати річкою вона здійснювала піші прогулянки".
 
-Wykorzystując pętlę znajdź wypisz wszystkie samogłoski ze zdania: 
-
-"Nad rzeczką opodal krzaczka, mieszkała kaczka-dziwaczka, lecz zamiast trzymać się rzeczki, robiła piesze wycieczki."
-
-Podpowiedź: string można traktować jak tablicę znaków ;\)
+Підказка: рядок можна розглядати як масив символів ;\)
