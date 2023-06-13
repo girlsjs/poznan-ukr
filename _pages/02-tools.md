@@ -1,14 +1,14 @@
 ---
-title: 2. Narzędzia
+title: 2. Інструменти
 layout: post
 ---
 
-By zacząć pisać kod w języku JavaScript nie potrzeba nam wiele. Na początek wystarczy nam przeglądarka internetowa i edytor tekstu. Później przyda nam się też [node.js](https://nodejs.org/en/).
+Щоб почати писати код на JavaScript, нам потрібно не так вже й багато. Для початку нам знадобиться веб-браузер і текстовий редактор. Пізніше також стане в нагоді [node.js](https://nodejs.org/en/).
 
-## Przeglądarka
+## Браузер
 
-Możesz pracować z dowolną ulubioną przeglądarką, jednak na potrzeby tego kursu polecamy korzystanie z Google Chrome ze względu na dobrze rozwinięty debugger.
+Ти можеш працювати з будь-яким з твоїх улюблених браузерів, але для цілей цього курсу ми рекомендуємо використовувати Google Chrome через його добре розвинений налагоджувач (дебагер).
 
-## Edytor tekstu
+## Текстовий редактор
 
-Czyli narzędzie, w którym będziemy pisać kod. Możesz użyć nawet aplikacji notatnik (wbudowanej w Windows), jednak wygodniejszy będzie np. [Visual Studio Code](https://code.visualstudio.com/), [Sublime Text](http://www.sublimetext.com/3) lub [Atom](https://atom.io/).
+Тобто інструмент, в якому ми будемо писати код. Ти можеш використовувати навіть додаток-блокнот \(вбудований у Windows\), але зручнішими будуть більш спеціалізовані редактори, на кшталт [Visual Studio Code](https://code.visualstudio.com/), [Sublime Text](http://www.sublimetext.com/3) або [Atom](https://atom.io/).

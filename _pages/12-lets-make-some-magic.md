@@ -1,53 +1,50 @@
 ---
-title: 12. Let's make some magic! ✨ 
+title: 12. Творімо магію! ✨ 
 layout: post
 ---
 
-Spróbujmy nieco ożywić naszą naszą stronę i dodać jej trochę koloru.
+Спробуймо трохи оживити наш сайт і додати трохи кольору.
 
-Stwórzmy naszą pierwszą funkcję w projekcie!
+Створімо нашу першу функцію в проєкті!
 
-W Twoim pliku JS zdefiniujemy następującą funkcję:
+Ми визначимо наступну функцію у JS-файлі:
 
 ```js
 function getRandomColor() {
-    console.log('Wylosujmy kolor!')
+    console.log('Додамо кольору!')
 }
 
 getRandomColor();
 ```
+Оновімо нашу сторінку в браузері, перейдемо в консоль і подивимося, що сталося.
 
-Odświeżmy naszą stronę w przeglądarce, przejdźmy do konsoli i zobaczmy co się wydarzyło.
+З'явився напис, який ми ввели. Час шукати кольори!
 
-Pojawił się wpisany przez nas napis. Czas poszukać kolorów!
+На більшості сайтів кольори зберігаються у шістнадцятковій системі. Наприклад: \#FFFFFF &mdash; білий, \#000000 &mdash; чорний, а \#FFA500 &mdash; помаранчевий. Як бачите, у цьому записі кожен колір починається з символу ‘\#’, за яким слідують 6 символів \(літери \(ABCDEF) та/або цифри \(0123456789\)\). Щоб створити випадковий колір, нам потрібно випадковим чином поєднати ці символи разом.
 
-Na większości stron internetowych kolory zapisuje się w formie szesnastkowej. Przykładowo: \#FFFFFF to kolor biały,  \#000000 to kolor czarny a FF A5 00 to pomarańczowy. Jak widzisz, w zapisie tym każdy kolor zaczyna się o symbolu ‘\#’ po którym występuje 6 znaków \(liter \(ABCDEF\) i/lub cyfr \(0123456789\)\). By stworzyć losowy kolor musimy losowo zestawić ze sobą owe znaki.
-
-Zacznijmy od tego, by stworzyć zmienną zawierającą wszystkie możliwe znaki:
+Почнемо зі створення змінної, яка містить усі можливі символи:
 
 ```js
 var letters = '0123456789ABCDEF';
 ```
 
-Naszą drugą zmienną będzie kolor. Jej jedynym stałym elementem jest znak ‘\#’ więc na razie tylko on będzie się krył pod naszą zmienną.
+Другою змінною буде колір. Її єдиною константою є символ '#', тому поки що це буде єдиний символ, який потрапить до нашої змінної.
 
 ```js
 var color = '#';
 ```
+Згодом ми додамо до неї випадкові літери з-поміж тих, що містяться в `letters`.
 
-Później bedziemy do niego dodawać losowe litery spośród tych zawartych w letters.
-
-Funkcja getRandomColor\(\) powinna wyglądać teraz tak:
+Тепер функція getRandomColor() повинна мати такий вигляд:
 
 ```js
 function getRandomColor() {
     var letters = '0123456789ABCDEF';
     var color = '#';
-
 }
 ```
 
-Teraz chcemy wyciągnąć z naszej zmiennej letter losowe litery i stworzyć z nich ciąg składający się z 6 znaków. Najłatwiej będzie więc 6-krotnie wyciągnąć z letters losowe znaki. Posłuży nam do tego pętla.
+Тепер ми хочемо витягнути випадкові літери з нашої змінної letters і створити з них рядок з 6 символів. Отже, найпростіший спосіб зробити це &mdash; витягнути випадкові символи з букв 6 разів. Для цього ми використаємо цикл.
 
 ```js
 function getRandomColor() {
@@ -60,44 +57,43 @@ function getRandomColor() {
 }
 ```
 
-Spróbujmy ją przeczytać:
+Спробуємо його прочитати:
 
-Dla każdego i, które na początku ma wartość zero i jest mniejsze od 6, wykonaj polecenie znajdujące się w klamrze a potem przejdź do i większego o 1.
+Для кожного i, що починається з нуля і є меншим за 6, виконати команду, що міститься у дужках, а потім перейти до i, що на 1 більше.
 
-Jak zapewne się domyślasz, 6 wynika z tego, że musimy 6-krotnie wyciągnąć naszego stringa ‘letters’ po jednej literze. Więc zacznijmy losowanie.
+Як можна здогадатись, число 6 означає, що нам потрібно взяти літери нашого рядка 6 разів, по одній літері за раз. Отже, почнемо.
 
-By wyciągnąć jakiś element listy musimy podać jego numer. Co ważne, liczenie elementów listy zaczynamy od cyfry zero. Patrząc na naszą zmienną:
+Щоб витягнути елемент списку, нам потрібно вказати його номер. Важливо, що ми починаємо відлік елементів списку з нуля. Дивимося на нашу змінну:
 
 ```js
 var letters = '0123456789ABCDEF';
 ```
 
-By wyciągnąć pierwszy elementy \(czyli cyfrę 0\) musimy napisać letters\[0\].
+Щоб витягти перший елемент \(тобто число 0\), нам потрібно записати letters\[0\].
 
-By wyciągnąć literę B użyjemy zapisu letters\[10\]. Ok, ale co z naszym losowaniem?
+Для того, щоб отримати літеру B, ми будемо використовувати позначення letters\[10\]. Гаразд, але що з нашим кольором?
 
-JavaScript posiada wbudowany obiekt zawierający własności i metody związane z funkcjami i stałymi matematycznymi. Ten obiekt nazywa się **Math**. Przykładowo Math.PI zwróci nam wartość liczby Pi. Więcej o obiekcie Math możecie znaleźć [tutaj](https://developer.mozilla.org/pl/docs/Web/JavaScript/Referencje/Obiekty/Math).  Jedną z metod Math jest metoda random\(\), która zwraca losową wartość z przedziału 0-1. Spróbujmy! Wpisz w konsoli przeglądarki kilkukrotnie Math.random\(\).
+JavaScript має вбудований об'єкт, що містить властивості та методи, пов'язані з математичними функціями та константами. Цей об'єкт називається Math. Наприклад, Math.PI поверне нам значення числа Pi. Ви можете дізнатися більше про об'єкт Math [тут](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math). Одним з методів Math є метод random(), який повертає випадкове значення від 0 до 1. Спробуймо! Введи Math.random() декілька разів у консолі браузера.
 
-My jednak chcemy wylosować liczbę całkowitą z przedziału 0-16. Pomnóżmy więc naszą losową wartość razy 16:
+Однак ми хочемо отримати ціле число від 0 до 16, тому помножимо наше випадкове значення на 16:
 
 ```js
 Math.random()*16;
 ```
 
-Jesteśmy już bliżej. Teraz jednak potrzebujemy liczb całkowitych, nie ułamkowych. Tu z pomocą przychodzi nam kolejna metoda obiektu Math, floor\(\), która zaokroglą liczby do liczb całkowitych. Spróbujmy wpisać w konsoli:
+Ми вже ближче. Однак тепер нам потрібні цілі числа, а не дроби. Тут нам на допомогу приходить ще один метод об'єкта Math &mdash; floor\(\), який округлює числа до цілих. Спробуємо ввести у консолі:
 
 ```js
 Math.floor(14.567);
 Math.floor(-1.38);
 ```
-
-Naszym celem jest jednak zaokrąglić wynik losowania liczb pomiędzy 0 a 16, czyli:
+Однак наша мета &mdash; округлити результат малювання чисел від 0 до 16, тобто:
 
 ```js
 Math.floor(Math.random() * 16);
 ```
 
-Będziemy robić kolejne losowanie 6 razy. Czyli proces ten powinniśmy zamieścić wewnątrz naszej pętli. Przypiszmy go do zmiennej:
+Ми будемо робити ще одне жеребкування 6 разів. Тобто, ми повинні заховати цей процес всередині нашого циклу. Присвоїмо його змінній:
 
 ```js
  function getRandomColor() {
@@ -109,14 +105,13 @@ Będziemy robić kolejne losowanie 6 razy. Czyli proces ten powinniśmy zamieśc
     }
 }
 ```
-
-Kolejny krok to 'wyciągnięcie' literki o wylosowanej pozycji z naszego stringa letters. Gdybyśmy chcieli wyciągnąć literę A wpisalibyśmy
+Наступним кроком буде "витягнути" літеру намальованої позиції з нашого рядка літер. Якщо ми хочемо витягнути літеру A, ми повинні ввести
 
 ```js
-letters[10]
+letters[9]
 ```
 
-My jednak przy każdym przejściu pętli chcemy wyciągnąć literę, która w tym momencie znajduje się pod zmienną randomNumber. Dlatego zamiast 10 wpiszemy randomNumber. Dla przejrzystości przypiszemy tę wartość do zmiennej:
+Однак ми хочемо витягувати літеру, яка знаходиться під змінною randomNumber, на кожному проході циклу. Тому замість 10 ми введемо randomNumber. Для наочності ми присвоїмо це значення змінній:
 
 ```js
 function getRandomColor() {
@@ -130,7 +125,7 @@ function getRandomColor() {
 }
 ```
 
-Sprawdźmy co się stanie gdy wyświetlimy wylosowaną literę.
+Подивимося, що відбувається, коли ми виводимо отриману літеру:
 
 ```js
 function getRandomColor() {    
@@ -145,7 +140,7 @@ function getRandomColor() {
 }
 ```
 
-I wywołajmy naszą funkcję:
+Викличемо нашу функцію:
 
 ```js
 function getRandomColor() { 
@@ -162,7 +157,7 @@ function getRandomColor() {
 getRandomColor();
 ```
 
-Mamy losowe litery spośród letters! My jednak chcemy by były one dodawane co zmiennej color. Tylko w ten sposób uzyskamy kolor. Możemy to zrobić przez dodawanie do istniejącej wartości color nowego elementu \(nowej litery\):
+У нас є випадкові літери з літер! Однак ми хочемо, щоб вони додавалися щоразу, коли використовується змінна кольору. Це єдиний спосіб отримати колір. Ми можемо зробити це, додавши новий елемент \(нову літеру\) до наявного значення кольору:
 
 ```js
 function getRandomColor() {    
@@ -181,9 +176,9 @@ function getRandomColor() {
 getRandomColor();
 ```
 
-Super! My jednak nie chcemy wyświetlać tego koloru a jedynie go zwrócić, by móc używać w przyszłości.
+Чудово! Однак ми не хочемо відображати цей колір, а лише повернути його для подальшого використання.
 
-Do zwracania wartości służy polecenie return:
+Для повернення значення використовується команда return:
 
 ```js
 function getRandomColor() {       
@@ -203,23 +198,27 @@ function getRandomColor() {
 getRandomColor();
 ```
 
-Mamy losowy kolor! Teraz musimy go przypisać do styli tekstu.
+Отримали випадковий колір! Тепер нам потрібно призначити його стилям тексту.
 
-By oddzielić poszczególne elementy strony używamy różnych znaczników. Przykładowo między znacznikami &lt;p&gt;&lt;/p&gt; zamieszczamy zawartość paragrafów. &lt;div&gt;&lt;/div&gt; to cały blok, czy też cała sekcja. &lt;table&gt;&lt;/table&gt; to oczywiście tabela. &lt;ul&gt;&lt;/ul&gt; to nieuporządkowana lista; &lt;ol&gt;&lt;/ol&gt; to lista uporządkowana \(ponumerowana\). &lt;li&gt;&lt;/li&gt; to poszczególne elementy listy. &lt;h1&gt;&lt;/h1&gt;, &lt;h2&gt;&lt;/h2&gt;, &lt;h3&gt;&lt;/h3&gt;, &lt;h4&gt;&lt;/h4&gt;, &lt;h5&gt;&lt;/h5&gt;, &lt;h6&gt;&lt;/h6&gt; to nagłówki kolejnego stopnia. W niektórych elementach możemy zagnieżdzać kolejne. Niektóre z nich mogą wystąpić wielokrotnie na stronie. By móc się odwołać do konkretynch elementów nadajemy im id \(przypisane tylko do jednego elementu\) oraz klasę \(class\), którą moga dzielić różne elementy. Np.
+Щоб відокремити різні елементи сторінки, ми використовуємо різні теги. 
+
+Наприклад, між тегами &lt;p&gt;&lt;/p&gt; розміщуємо вміст абзаців. &lt;div&gt;&lt;/div&gt; &mdash; це цілий блок або секція. &lt;table&gt;&lt;/table&gt; використовуємо для таблиці. &lt;ul&gt;&lt;/ul&gt; &mdash; це маркований список, а &lt;ol&gt;&lt;/ol&gt; &mdash; нумерований. &lt;li&gt;&lt;/li&gt; &mdash; кожний з елементів списку. &lt;h1&gt;&lt;/h1&gt;, &lt;h2&gt;&lt;/h2&gt;, &lt;h3&gt;&lt;/h3&gt;, &lt;h4&gt;&lt;/h4&gt;, &lt;h5&gt;&lt;/h5&gt;, &lt;h6&gt;&lt;/h6&gt; &mdash; заголовки різних ступенів. 
+
+У деякі елементи ми можемо вкладати інші елементи. Деякі з них можуть зустрічатися на сторінці кілька разів. Для того, щоб посилатися на конкретні елементи, ми даємо їм ідентифікатор \(присвоюється тільки одному елементу\) або клас \(class\), який можуть мати декілька елементів. Наприклад:
 
 ```
 <p id="magic" class="title">Let’s make some magic!</p>
 ```
 
-Zamieśćmy napis na naszej stronie pomiędzy znacznikami i nadajmy mu id.
+Вставмо підпис на нашій сторінці між тегами та присвоїмо йому ідентифікатор.
 
-Teraz wróćmy do kodu JS. By znaleźć na stronie element o konkretnym id użyjemy polecenia document.getElementById\(\); W nawiasie zamieszczamy nazwę id. Warto przypisać ten element do zmiennej.
+Тепер повернемося до JS-коду. Щоб знайти на сторінці елемент з певним id, ми скористаємося командою `document.getElementById();` У дужках ми вказуємо ім'я id. Добре було б присвоїти цей елемент змінній.
 
 ```js
 var title = document.getElementById('magic');
 ```
 
-Teraz stworzymy kolejną funkcję odpowiedzialną za zmianę koloru tekstu.
+Тепер ми створимо ще одну функцію, яка відповідатиме за зміну кольору тексту.
 
 ```js
 function changeColor() {
@@ -227,13 +226,13 @@ function changeColor() {
 }
 ```
 
-By zmienić kolor odwołamy się do obiektu style. Gdy wpiszemy
+Щоб змінити колір, ми звернемося до об'єкта стилю. Коли ми введемо:
 
 ```js
 console.log(title.style)
 ```
 
-JavaScript zwróci nam wszystkie właściwości obiektu style.[ Tutaj ](https://www.w3schools.com/jsref/dom_obj_style.asp)znajdziesz uporządkowaną listę. Nam potrzebna jest właściwość color.
+JavaScript поверне всі властивості об'єкта стилю. [Тут](https://www.w3schools.com/jsref/dom_obj_style.asp) ви побачите впорядкований список. Нам потрібна властивість кольору.
 
 ```js
 function changeColor() {
@@ -241,15 +240,15 @@ function changeColor() {
 }
 ```
 
-Dodatkowo chcemy zmienić tę właściwość, czyli nadać jej nową wartość. Robimy to tak, jak zmieniamy wartość zmiennej:
+Крім того, ми хочемо змінити цю властивість, тобто надати їй нового значення. Ми робимо це, так само як змінюємо значення змінної:
 
 ```js
 function changeColor() {
-    title.style.color = nowy_kolor;
+    title.style.color = new_color;
 }
 ```
 
-Nasz nowy kolor zostanie wylosowany podczas wywołania funkcji getRandomColor:
+Наш новий колір буде створено під час виклику функції getRandomColor:
 
 ```js
 function changeColor() {
@@ -257,18 +256,18 @@ function changeColor() {
 }
 ```
 
-Wywołajmy funkcję changeColor i odświeżmy naszą stronę kilkukrotnie.
+Викличемо функцію changeColor і оновимо нашу сторінку кілька разів.
 
-Ale może byłoby lepiej, gdyby nasza funkcja była wielokrotnego użytku i można było ją przypisać do różnych elementów na stronie a nie tylko tytułu?
+Але, можливо, було б краще, якби наша функція була багаторазовою і її можна було б призначити різним елементам на сторінці, а не тільки заголовку?
 
-Jeśli się na to zdecydujemy musimy naszej funkcji przypisać parametr. Zamieszczamy go w nawiasie przy nazwie funkcji.
+Якщо ми вирішили це зробити, нам потрібно призначити параметр для нашої функції. Ми поміщаємо його в дужки поруч з назвою функції.
 
 ```js
 function changeColor(text) {
 }
 ```
 
-Teraz polecenie zmiany koloru musimy przypisać nie do zmiennej title, ale do parametru funkcji który będzie się zmieniał:
+Тепер нам потрібно призначити команду зміни кольору не змінній title, а параметру функції, який змінюватиметься:
 
 ```js
 function changeColor(text) {
@@ -276,17 +275,17 @@ function changeColor(text) {
 }
 ```
 
-Teraz wywołując funkcję musimy zastąpić nasz parametr istniejącym elementem strony:
+Тепер при виклику функції нам потрібно замінити наш параметр на існуючий елемент сторінки:
 
 ```js
 changeColor(title);
 ```
 
-Ale to jeszcze nie koniec pracy! Nasz napis może mieć dowolny kolor. Ale sprawmy by było jeszcze ciekawiej. Zmieniajmy nasz kolor co 2 sekundy!
+Але на цьому робота не закінчується! Наш напис може бути будь-якого кольору. Але зробімо його ще цікавішим. Давайте будемо змінювати колір кожні 2 секунди!
 
-Aby uzyskać taki efekt musimy co dwie sekundy wywoływać naszą funkcję changeColor\(title\);
+Щоб досягти цього ефекту, нам потрібно викликати нашу функцію changeColor\(title\) кожні дві секунди;
 
-Posłuży nam do tego metoda setInterval\(\); Wygląda ona następująco:
+Для цього ми використаємо метод setInterval\(\), який виглядає наступним чином:
 
 ```js
 setInterval(function() { 
@@ -294,7 +293,7 @@ setInterval(function() {
 }, coJakiCzas);
 ```
 
-Czas odmierzamy w milisekundach. 2 sekundy to 2000 milisekund. Czyli:
+Ми вимірюємо час у мілісекундах. 2 секунди &mdash; це 2000 мілісекунд. Тобто:
 
 ```js
 setInterval(function() { 
@@ -302,5 +301,4 @@ setInterval(function() {
 }, 2000);
 ```
 
-✨ Jest i magia! ✨ 
-
+✨ Магія існує! ✨

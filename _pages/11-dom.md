@@ -3,27 +3,26 @@ title: 11. DOM
 layout: post
 ---
 
-DOM, czyli **Document Object Model** pozwala językowi JS odzwierciedlić układ strony HTML.
+DOM, або **Document Object Model** \(Об'єктна модель документу\), дозволяє мові JS отримати макет HTML-сторінки.
 
-W narzędziach developerskich wróćmy do zakładki "Elements". Tam widać całą naszą stronę. Ale jak się odwołać do jakiegoś elementu za pomocą JSa?
+В інструментах розробника повернемося до вкладки "Елементи". Там ви можете побачити всю нашу сторінку. Але як ми можемо посилатися на елемент за допомогою JS?
 
-Wróćmy do zakładki "Console". Do elementów HTML możemy się dowoływać poprzez ich:
+Давайте повернемося до вкладки "Консоль". Ми можемо звертатися до HTML-елементів через їхні імена:
 
-- **id** - `getElementById`
+- **id** &mdash; `getElementById`.
 
-- **tag** \(np. div, p, ul\) - `getElementsByTagName`
+- **tag**  \(наприклад, div, p, ul\) &mdash; `getElementsByTagName`
 
-- **klasę** - `getElementsByClassName`
+- **class** &mdash; `getElementsByClassName`.
 
-- **selektor** - `querySelector` i `querySelectorAll` \(pierwsza zwraca pierwszy element z pasujących, druga zwraca wszystkie pasujące elementy\)
+- **selector** &mdash; `querySelector` і `querySelectorAll` (перший повертає перший елемент зі знайдених, другий &mdash; всі знайдені елементи).
 
-Spróbujmy teraz pobrać do zmiennej nagłówek ze strony, z którą pracujesz. Zobacz, że w pliku `index.html` masz tag `<h1>`, a w nim jakąś treść. Pobierz ten element do zmiennej korzystając z metody `querySelector`. Aby ta metoda zadziałała, musisz ją wywołać na dokumencie HTML, czyli `document` , a potem podać wybrany selektor w nawiasie okrągłym. Twój kod powinien wyglądać tak:
+Тепер давай спробуємо завантажити заголовок сторінки, з якою працюємо, у змінну. Подивіться, що у файлі `index.html` у вас є тег `<h1>`, а в ньому деякий вміст. Отримайте цей елемент у змінну за допомогою методу `querySelector`. Щоб цей метод спрацював, потрібно викликати його на HTML-документі, тобто `document`, а потім у круглих дужках вказати потрібний вам селектор. Ваш код повинен виглядати так:
 
-`let header = document.querySelector("h1");`
+`let header = document.querySelector("h1");`.
 
-Wypisz teraz tę zmienną w konsoli i sprawdź, czy zapisał się do niej element HTML. Co widzisz?
+Тепер виведіть цю змінну в консоль і перевірте, чи записався в неї HTML-елемент. Що ви бачите?
 
-Jak umiemy już pobierać elementy do zmiennych, możemy działać dalej! 
+Тепер, коли ми знаємо, як записувати елементи у змінні, можна рухатися далі!
 
-🪄 Pora na trochę magii!
-
+Настав час для магії!

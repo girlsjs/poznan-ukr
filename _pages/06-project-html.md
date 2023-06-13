@@ -1,15 +1,15 @@
 ---
-title: 6. Szkielet projektu
+title: 6. Кістяк проекту
 layout: post
 ---
 
-Dość zapisywania zmiennych w konsoli, czas stworzyć ramy naszego projektu i zacząć pracować z prawdziwymi plikami!
+Досить зберігати змінні в консолі, настав час створити наш проект і почати працювати з реальними файлами!
 
-Na sam początek stwórz w wybranej lokalizacji \(np. na pulpicie\) nowy folder. To w nim będziemy zapisywać pliki z naszego projektu. Potrzeba nam trzech plików - pierwszy z kodem HTML, drugi z kodem CSS i trzeci z kodem JavaScript. Takie pliki możemy dodawać z poziomu edytora - otwórz w edytorze stworzony przez siebie folder i dodaj nowe pliki albo możesz tworzyć pliki bezpośrednio w wybranej lokalizacji. Pamiętaj tylko, by dodać im odpowiednie rozszerzenia.
+Для початку створи нову папку у вибраному місці \(наприклад, на робочому столі\). Сюди ми будемо зберігати файли з нашого проекту. Нам знадобляться три файли: перший &mdash; з HTML-кодом, другий &mdash; з CSS-кодом і третій &mdash; з JavaScript-кодом. Ми можемо додати ці файли з редактора &mdash; або відкрити папку, яку створили в редакторі, і додати нові файли, або ти можеш створити файли безпосередньо в обраному місці. Тільки не забудь додати до них відповідні розширення.
 
-### Plik HTML
+## HTML-файл
 
-Najpierw stwórz plik `index.html` i wklej do niego następujący kod:
+Спочатку створи файл `index.html` і встав у нього наступний код:
 
 ```
 <!DOCTYPE html>
@@ -18,20 +18,20 @@ Najpierw stwórz plik `index.html` i wklej do niego następujący kod:
       <title>Girls.JS - Poznan</title>
    </head>
    <body>
-      <h1>Hello, Girls.JS!</h1>
+      <h1>Let's make some magic here!</h1>
    </body>
 </html>
 ```
 
-Teraz kliknij dwukrotnie na plik `index.html`, który masz zapisany w folderze. Powinien się automatycznie otworzyć w przeglądarce. Powinnaś widzieć napis **Let's make some magic here!** i mieć możliwość przejścia do konsoli. Udało się? Świetnie! Czas na dodanie stylów.
+Тепер двічі клацни на файлі `index.html`, збереженому в папці. Він повинен автоматично відкритися у браузері. Ти маєш побачити напис **Let's make some magic here!** і зможеш перейти в консоль. У тебе все вийшло? Чудово! Тепер настав час додати стилі.
 
-### Plik CSS
+## Файл CSS
 
-W tym samym folderze utwórz kolejny folder o nazwie `css`, a w nim plik `style.css`. Teraz musimy powiedzieć przeglądarce, skąd ma brać style dla naszego kodu HTML. W tym celu dodamy do kodu HTML w znaczniku `<head>` następującą linijkę:
+У цій же папці створи ще одну папку з назвою `css`, а в ній &mdash; файл `style.css`. Тепер нам потрібно вказати браузеру, звідки брати стилі для нашого HTML-коду. Для цього ми додамо наступний рядок до HTML-коду в тег `<head>`:
 
-`<link rel="stylesheet" href="css/style.css">`
+`<link rel="stylesheet" href="css/style.css">`.
 
-Do pliku `style.css` wklej poniższy kod:
+Встав цей код у файл style.css:
 
 ```css
 h1 { 
@@ -39,21 +39,20 @@ h1 {
 }
 ```
 
-Zapisz plik `style.css` i odśwież Twój podgląd pliku `index.html` w przeglądarce. Napis **Let's make some magic here!** powinien być teraz czerwony. Dzięki temu wiemy, że plik ze stylami jest prawidłowo podłączony do pliku html. Teraz czas na najważniejsze, czyli plik JavaScript.
+Збережи файл `style.css` і онови попередній перегляд файлу `index.html` у браузері. Напис **"Let's make some magic here!"** тепер має стати червоним. Це свідчить про те, що файл стилів правильно пов'язаний з файлом html. Тепер настав час для найважливішого &mdash; файлу JavaScript.
 
-### Plik JavaScript
+## Файл JavaScript
 
-W swoim folderze stwórz kolejny folder, tym razem o nazwie `js`. W nim utwórz plik `app.js`. To tutaj będziemy zapisywać nasz cały kod JavaScript, dzięki któremu na naszej stronie będzie się działa magia ;\) Aby podłączyć nasz skrypt do strony w HTML, przed zamknięciem znacznika &lt;/body&gt; wklej następującą linijkę:
+У папці з проектом створи ще одну папку, цього разу з назвою `js`. У ній створи файл `app.js`. Це місце, де ми будемо зберігати весь наш JavaScript код, який буде творити магію на нашій сторінці ;) Щоб підключити наш скрипт до HTML-сторінки, встав наступний рядок перед закриттям тегу `</body>`:
 
 `<script src="js/app.js"></script>`
 
-Ale skąd będziemy wiedzieć, że nasz plik JS naprawdę jest dobrze podłączony? 
+Але як ми дізнаємося, що наш JS-файл дійсно правильно підключений?
 
-**Musimy sprawdzić konsolę!**
+Нам потрібно перевірити консоль!
 
-W pliku `app.js` dodaj kod:
+У файлі `app.js` додай код:
 
-`console.log('działa!');`
+`console.log('Працює!');`
 
-Teraz zapisz plik JS, odśwież podgląd pliku `index.html` w przeglądarce i przejdź do konsoli. Powinnaś zobaczyć tam napis "działa!". To znak, że z Twoim plikiem JS wszystko jest w porządku i możesz ruszyć do wykonywania kolejnych zadań :\)
-
+Тепер збережи JS-файл, онови попередній перегляд файлу `index.html` у твоєму браузері і перейди до консолі. Ви повинні побачити там напис **"Працює!"**. Це значить, що з вашим JS-файлом все гаразд і можна переходити до виконання інших завдань :\)

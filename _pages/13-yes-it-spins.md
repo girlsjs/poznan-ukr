@@ -1,19 +1,19 @@
 ---
-title: 13. A jednak się kręci! 🪐
+title: 13. А все ж таки вона обертається!
 layout: post
 ---
 
-Kopernik wstrzymał Słońce, ruszył Ziemię. My poruszymy wszystkie 8 planet!
+Коперник зупинив Сонце, перемістив Землю. Ми зрушимо всі 8 планет!
 
-Pobierzcie naszą paczkę: [LINK](https://drive.google.com/file/d/1nbT2_pX-eKDJi1JIGvDzoB4Tr_rCfAjk/view)
+Завантажуйте наш пакет: [посилання](https://drive.google.com/file/d/1nbT2_pX-eKDJi1JIGvDzoB4Tr_rCfAjk/view)
 
-W środku znajdziecie plik index.html, main.js oraz main.css.
+Всередині ви знайдете файл index.html, main.js та main.css.
 
-Kiedy otworzycie plik index.html w przeglądarce zobaczycie 9 zdjęć planet.
+Коли ви відкриєте файл index.html у вашому браузері, ви побачите 9 зображень планет.
 
-Teraz zajrzyjmy do tego pliku w edytorze tekstu.
+Тепер подивімося на цей файл у текстовому редакторі.
 
-Nasze planety to elementy listy:
+Наші планети &mdash; це елементи списку:
 
 ```markdown
 <ul class="carousel">
@@ -21,23 +21,31 @@ Nasze planety to elementy listy:
 </ul>
 ```
 
-Jak możecie się domyślić, naszym zadaniem jest stworzenie karuzeli. Zaczniemy od jej odpowiedniego ułożenia. Posłużą nam do tego style CSS które zamieścimy w pliku main.css. By podpiąć style do naszego pliku html musimy między tagami &lt;head&gt;&lt;/head&gt; dodać kolejny element:
+Всередині ви знайдете файл index.html, main.js та main.css.
+
+Коли ви відкриєте файл index.html у вашому браузері, ви побачите 9 зображень планет.
+
+Тепер подивімося на цей файл у текстовому редакторі.
+
+Наші планети - це елементи списку:
+
+Як ви можете здогадатися, наше завдання - створити карусель. Ми почнемо з того, що правильно її розташуємо. Для цього ми скористаємося стилями CSS, які розмістимо у файлі main.css. Щоб прикріпити стилі до нашого html-файлу, нам потрібно додати ще один елемент між тегами &lt;head&gt;&lt;/head&gt;:
 
 ```markdown
 <link rel="stylesheet" type="text/css" href="sciezka/do/pliku.css">
 ```
 
-Jeśli zrobicie to poprawnie, powinnyście zobaczyć rozgwieżdżone niebo.
+Якщо ви все зробили правильно, то повинні побачити зоряне небо.
 
-Czas dodać nasze style. Pomoże Wam w tym strona [https://www.w3schools.com/css/](https://www.w3schools.com/css/). Nie bójcie się również korzystać z wyszukiwarki Google. By dodać jakiś styl odwołujmy się do klas poszczególnych elementów. By to zrobić w plku CSS musimy zapisać:
+Тепер настав час додати наші стилі. У цьому вам допоможе сайт[w3schools](https://www.w3schools.com/css/). І не бійся використовувати Google. Щоб додати стиль, ми звертаємося до класів окремих елементів. Для цього нам потрібно написати у файлі CSS:
 
 ```css
-.nazwaKlasy {
-    wlasciwosc: wartosc;
+.className {
+    property: value;
 }
 ```
 
-np.:
+Наприклад:
 
 ```css
 .carousel {
@@ -45,87 +53,92 @@ np.:
 }
 ```
 
-Tło całej karuzeli powinno zrobić się zielone.
+Тло всієї каруселі має стати зеленим.
 
-Zacznijmy od ułożenia planet obok siebie. Niech każdy slajd ma szerokość \(`width`\) 800px.  Ustawmy szerokość całej karuzeli na ok. 7300px.
+Почнемо з того, що розташуємо планети поруч. Нехай кожен слайд має ширину \(`width`\) 800px.  Встановімо ширину всієї каруселі приблизно 7300 пікселів.
 
-Sprawmy też, by każda planeta znajdowała się na środku slajdu \(`text-align: center;`\). Ale nadal widzimy więcej niż jedną planetę. Określmy więc szerokość \(`width`\) sceny \(`.carousel-stage`\), i schowajmy to, co się w niej nie zmieści \(`overflow: hidden;`\). Wycentrujmy też naszą scenę \(`.carousel_stage, margin-left: auto; margin-right: auto;`\).
+Також зробимо кожну планету по центру слайда  \(`text-align: center;`\). Але ми все одно можемо бачити більше однієї планети. Тому задамо ширину \(`width`\) сцени \(`.carousel-stage`\), і приховаємо те, що не поміститься на ній \(`overflow: hidden;`\). Також вирівняємо нашу сцену по центру \(`.carousel_stage, margin-left: auto; margin-right: auto;`\).
 
-Teraz nawigacja. Widzicie dwie strzałki pod karuzelą? Najpierw umieścimy je na odpowiedniej wysokości - czyli w połowie wysokości karuzeli. Na początku nadajmy karuzeli \(`.carousel`\) `position: relative`. To w stosunku do niej będziemy ustawiać strzałki. By strzałki nie były pod karuzelą, a 'unosiły się w powietrzu' nadajmy nawigacji \(`.carousel-nav`\) `position:absolute`. Umieśćmy strzałki w połowie wysokości karuzeli. Do styli dodajmy więc `top: 50%` \(nawigacja znajdzie się wtedy w 50% wysokości rodzica, który posiada `position: relative`\). Ale coś nie do końca się zgadza. Strzałki są trochę za nisko. Dokładnie połowę swojej wysokości za nisko. Dokonamy więc małej transformacji: `transform: translateY(-50%)`.
+Тепер про навігацію. Бачите дві стрілки під каруселлю? Спочатку давайте розмістимо їх на потрібній висоті, тобто на половині каруселі. Для початку дамо каруселі `position: relative`. Саме відносно неї ми будемо розташовувати стрілки. Щоб стрілки були не під каруселлю, а "висіли в повітрі", надамо навігації \(`.carousel-nav`\) `position:absolute`.
 
-Następny krok to umieszczenie jednej strzałki po prawej, a drugiej po lewej stronie karuzeli. Odpowiednio `float: left;` i `float: right;`.
+Розмістимо стрілки на півдорозі вгору по каруселі. Додамо до стилів `top: 50%` \(тоді навігація буде на рівні 50% від висоти батьківського стилю, який має `position: relative`\). Але щось не зовсім складається. Стрілки трохи занизькі. Рівно на половину їхньої висоти занадто низько. Тому ми зробимо невелику трансформацію: `transform: translateY(-50%)`.
 
-Czas na wprawienie naszych planet w ruch!
+Наступний крок: розмістити одну стрілку з правого, а іншу &mdash; з лівого боку каруселі. Це можна зробити за допомогою `float: left;` і `float: right;` відповідно.
 
-Na początek podepnijmy do naszej strony plik `main.js`. Robimy to podobnej zasadzie jak plik CSS z tym, że używamy tagu `script` , a ścieżkę wpisujemy w atrybucie `src`.
+Час привести наші планети в рух!
+
+Для початку давайте підключимо файл `main.js` до нашої сторінки. Ми робимо це аналогічно файлу CSS, за винятком того, що використовуємо тег `script` і вказуємо шлях до нього в атрибуті `src`.
 
 ```markdown
 <script src="sciezka/do/pliku.js"><script>
 ```
 
-Wejdź na stronę, a następnie w konsolę przeglądarki. Jeśli wszystko działa, powinien pojawić się komunikat.
+Перейдіть на сторінку, а потім в консоль браузера. Якщо все працює, має з'явитися повідомлення.
 
-Pomyślmy, jak ma działać nasza karuzela. Wyobraźmy sobie, że jest to taśma filmowa i w określonych momentach \(po kliknięciu strzałki lub po upływie określonego czasu\) cała taśma ma się przesunąć o szerokość jednej klatki \(czyli jednego slajdu\).
+Давайте подумаємо, як ми хочемо, щоб наша карусель працювала. Уявімо, що це стрічка фільму, і в певні моменти \(при натисканні стрілки або через певний проміжок часу\) вся стрічка повинна рухатися на ширину одного кадру \(тобто на один слайд\).
 
-Przejdźmy więc do pliku `main.js`. Usuńmy aktualny kod. Zaczniemy od określenia naszych zmiennych:
+Перейдемо до файлу `main.js`. Видалимо поточний код. Почнемо з визначення наших змінних:
 
-`carousel` dla karuzeli
+`carousel` для каруселі
 
-`stage` dla sceny naszej karuzeli
+`stage` для сцени нашої каруселі
 
-`prev` dla przycisku "wstecz"
+`prev` для кнопки "назад" 
 
-`next` dla przycisku "następny"
+`next` для кнопки "вперед"
 
-Nie zapomnij o słowach kluczach definiujących zmienne \(czyli używamy tu `let` albo `const`\).
 
-Teraz pobierzemy elementy HTML do określonych przez nas zmiennych. Posłuży nam do tego znana już metoda `querySelector()`, która wyświetli nam pierwszy element na stronie o określonym atrybucie, np. klasie.
+Не забудь про ключові слова, які визначають змінні \(тобто ми використовуємо тут `let` або `const`\).
+
+Тепер ми отримаємо елементи HTML у визначені нами змінні. Для цього ми скористаємося вже відомим методом querySelector(), який відобразить перший елемент на сторінці із заданим атрибутом, наприклад, class.
 
 ```js
 var carousel = document.querySelector('.carousel');
 ```
 
-Pobierz w ten sposób elementy dla reszty zdefiniowanych zmiennych \(czyli dla naszej sceny i dwóch przycisków\).
+Отримай таким чином елементи для решти визначених змінних \(тобто для нашої сцени та двох кнопок\).
 
-Zostanie nam jeszcze jedna zmienna do zdefiniowania: `slide` dla pojedynczych elementów karuzeli. Tu musimy wziąć wszystkie slajdy, dlatego skorzystamy z metody `querySelectorAll()`.
+Нам залишиться визначити ще одну змінну: `slide` для окремих елементів каруселі. Тут нам потрібно взяти всі слайди, тому ми скористаємося методом `querySelectorAll()`.
 
-Zróbmy to ze wszystkimi elementami na stronie :\)
+Проробимо це з усіма елементами на сторінці :\)
 
-Kolejny krok, to określenie, o jaką szerokość ma się przesuwać nasza “taśma”. Jak już wspomnieliśmy, jest to szerokość jednego slajdu. Spróbujmy więc “wyciągnąć” tę wartość. Wykorzystamy do tego właściwość `clientWidth` która zwraca szerokośc danego elementu. Spróbujmy:
+Наступний крок &mdash; вказати, на яку ширину ми хочемо, щоб наша "стрічка" рухалася. Як ми вже згадували, це ширина одного слайда. Спробуймо "розтягнути" це значення. Для цього ми скористаємося властивістю `clientWidth`, яка повертає ширину заданого елемента. Спробуймо:
 
 ```js
 var slideWidth = slide.clientWidth;
 console.log(slideWidth);
 ```
 
-Sprawdźmy, co wyświetli się w konsoli. Pojawił nam się komunikat, że wartość jest niezdefiniowana. Sprawdźmy więc, co kryje się pod zmienną `slide`. Pojawia się lista elementów. JS nie potrafi określić szerokości listy elementów. Nasza zmienna slide zawiera w sobie bowiem tablicę ze wszystkimi elementami o klasie `slide`, jakie udało jej się znaleźć w dokumencie. Nasz kod poradzi sobie za to z jednym elementem, np. pierwszym. Pierwszy element listy ma index zero, a więc:
+Перевіримо, що виводиться в консолі. Ми отримуємо повідомлення, що значення не визначено. Тому перевіримо, що ховається під змінною `slide`.
+
+З'являється список елементів. JS не може визначити ширину списку елементів. Це тому, що наша змінна slide містить масив з усіма елементами класу `slide`, які вдалося знайти в документі. Натомість наш код може працювати з одним елементом, наприклад, з першим елементом. Перший елемент у списку має нульовий індекс, тому:
 
 ```js
 var slideWidth = slide[0].clientWidth;
 console.log(slideWidth);
 ```
 
-Kolejny krok to określenie, który slajd właśnie nam się wyświetla. Początkowo będzie to pierwszy slajd, ale jak wiemy w JS pierwszy element to element 0.
+Наступний крок &mdash; вказати, який слайд ми щойно відобразили. Спочатку це буде перший слайд, але, як ми знаємо, в JS першим елементом є елемент 0.
 
 ```js
 var currentIndex = 0;
 ```
 
-A co, gdy dotrzemy do ostatniego elementu? Powinniśmy wrócić do początku slajdu. Znajdźmy więc ostatni element. Najpierw określimy liczbę wszystkich elementów. Posłuży nam do tego właściwość length.
+Але що, якщо ми дійдемо до останнього елемента? Ми повинні повернутися до початку слайда. Отже, знайдімо останній елемент. Спочатку ми вкажемо кількість всіх елементів. Для цього скористаємося властивістю length.
 
 ```js
 var slidesNumber = slide.length - 1;
 ```
 
-Skąd wzięło się -1? `Slide.length` to liczba slajdów. Czyli 9. Jednak w JavaScript liczenie elementów zaczynamy od 0, a nie 1. Ostatni slajd nie będzie miał wartości 9 tylko 8.
+Звідки взялося число -1? `Slide.length` - це кількість слайдів. Тобто 9, але в JavaScript ми починаємо відлік елементів з 0, а не з 1. Останній слайд матиме значення не 9, а 8.
 
-OK. Teraz czas na napisanie funkcji, które wprawi nasz układ słoneczny w ruch i przesunie całą karuzelę o odpowiednią szerokość. Wykorzystamy do tego style. Spróbujmy najpierw za pomocą CSSa przesunąć naszą karuzelę w lewo o jeden slajd, czyli 800px. Pomogą nam w tym właściwości `position`,` left` i `right`.
+Гаразд! Тепер настав час написати функцію, яка приведе нашу Сонячну систему в рух і пересуне всю карусель на відповідну ширину. Для цього ми будемо використовувати стилі. Спочатку спробуємо використати CSS, щоб перемістити нашу карусель вліво на один слайд, або на 800px. У цьому нам допоможуть властивості `position`, `left` і `right`.
 
-Gdy już się Wam uda wróćcie do pliku JS. Będziemy manipulować wartościami CSS za pomocą funkcji JavaScript.
+Після того, як все вийшло, повернімось до JS-файлу. Ми будемо маніпулювати значеннями CSS за допомогою функцій JavaScript.
 
-Stwórzmy funkcję o nazwie `goToSlide()`Jej wynikiem ma być zmieniona wartość właściwości `left` naszej karuzeli. Ma ona wynieść tyle, by pokazać odpowiedni slajd. Mała podpowiedź - wykorzystamy do tego zmienną `slideWidth` i pozycję slajdu, który chcemy zobaczyć.
+Створимо функцію з назвою `goToSlide()` Результатом буде зміна значення властивості `left` нашої каруселі. Цього має бути достатньо, щоб показати відповідний слайд. Невелика підказка &mdash; ми будемо використовувати змінну `slideWidth` і позицію слайда, який хочемо побачити.
 
-Zacznijmy od początku. Aby zmienić wartość `left` karuzeli wykorzystamy metodę `style.left`. Dzięki niej jesteśmy zmienić pozycję danego elementu w stosunku do jego lewej krawędzi.
+Почнемо з початку. Для зміни значення `left` каруселі ми скористаємося методом `style.left`. З його допомогою ми можемо змінювати позицію заданого елемента відносно його лівого краю.
 
 ```js
 function goToSlide() {
@@ -133,13 +146,11 @@ function goToSlide() {
 }
 ```
 
-Zastanówmy się, jaką wartość powinno przyjąć `length` , by pokazać drugi slajd. Jaką, by pokazać trzeci, a czwarty? Czy dostrzegasz jakąś ogólną zasadę?
+Розгляньмо, яке значення `length` повинно бути, щоб показати другий слайд. А яке значення для третього, а яке для четвертого? Чи бачите ви якесь загальне правило?
 
-Tak! Mnożymy `slideWidth` razy pozycję konkretnego slajdu!
+Так, ми множимо `slideWidth` на позицію конкретного слайда. Спробуймо!
 
-Więc spróbujmy:
-
-Załóżmy, że zmienna `index` to pozycja naszego slajdu. Zdefiniujmy ją jako 3 \(pozycja 4 slajdu\).
+Припустимо, що змінна `index` &mdash; це позиція нашого слайда. Визначимо її як 3 \(позиція 4 слайду\).
 
 ```js
 function goToSlide() {
@@ -147,11 +158,11 @@ function goToSlide() {
 }
 ```
 
-Wywołajmy tę funkcję w konsoli.
+Викличемо цю функцію в консолі.
 
-Działa!
+Працює!
 
-Tylko pojawia się pewien problem - mamy wiele slajdów, każdy ma inny `index`. Pisanie oddzielnej funkcji dla każdego slajdu byłoby mało wydajne. Wykorzystajmy więc parametry funkcji! Wtedy dla różnych wartości możemy użyć tej samej funkcji.
+Тільки є проблема &mdash; у нас є декілька слайдів, кожен з яких має різний `index`. Писати окрему функцію для кожного слайда було б неефективно. Тому використаймо параметри функції! Тоді для різних значень ми зможемо використовувати одну і ту ж функцію.
 
 ```js
 function goToSlide(index) {
@@ -159,9 +170,9 @@ function goToSlide(index) {
 }
 ```
 
-Wywołajmy tę funkcję w konsoli wpisując, np. `goToSlide(3);` `goToSlide(1);` `goToSlide(4);`
+Викличемо цю функцію в консолі, набравши, наприклад, `goToSlide(3);`, `goToSlide(1);`, `goToSlide(4);`.
 
-Działa! Tylko teraz `currentIndex` też powinien się zmienić. Powinien być równy numerowi, który wpisaliśmy jako argument. Dopiszmy wiec do naszej funkcji tę zmianę:
+Працює! Тільки тепер `currentIndex` також має змінитися. Він має дорівнювати числу, яке ми ввели як аргумент. Додаймо цю зміну до нашої функції:
 
 ```js
 function goToSlide(index) {
@@ -170,18 +181,17 @@ function goToSlide(index) {
 }
 ```
 
-Przejdźmy do nawigacji :\)
+Перейдемо до навігації :\)
 
-Klikanie na przycisk `carousel-next` powinno nas przenosić do slajdu o indeksie większym o 1. Klikanie na przycisk `carousel-prev` powinno nas przenosić do slajdu o indeksie mniejszym o 1 od aktualnego indeksu.
+При натисканні на кнопку `carousel-next` ми повинні переходити на слайд з індексом на 1 більше. При натисканні на кнопку `carousel-prev` ми повинні переходити на слайд з індексом на 1 менше поточного індексу.
 
-Stwórzmy więc dwie funkcje. Na początek
+Тому створимо дві функції. Перша функція:
 
 ```js
  function slideToNext() {
  }
 ```
-
-Ma ona przesuwać slajdy do przodu o 1 przy każdym wywołaniu. Czyli wykorzystujemy tu funkcję `goToSlide()`. Tylko co będzie naszym argumentem? Jak wspomnieliśmy wcześniej, każde wywołanie naszej funkcji ma przenosić nas do slajdu o indeksie o 1 większym od indeksu aktualnego slajdu. Indeks aktualnego slajdu przechowujemy w zmiennej `currentIndex`. Czyli nasz argument to `currentIndex + 1`.
+Передбачається, що при кожному її виклику слайди будуть пересуватися вперед на 1. Тобто, ми використовуємо функцію `goToSlide()`. Що буде нашим аргументом? Як ми вже згадували раніше, кожен виклик нашої функції повинен перемістити нас на слайд з індексом на 1 більше, ніж індекс поточного слайда. Ми зберігаємо індекс поточного слайда у змінній `currentIndex`. Тобто, наш аргумент &mdash; це `currentIndex + 1`.
 
 ```js
 function slideToNext() {
@@ -189,46 +199,46 @@ function slideToNext() {
 }
 ```
 
-Zróbmy analogicznie z `slideToPrev`.
+Проведемо аналогію з `slideToPrev`.
 
-Kolejny krok to wywołanie obu funkcji podczas klikania na przyciski. Klikanie to wydarzenia \(eventy\), kóre odbywają się na stronie. Mogą być one wywołane prze użytkownika \(jak kliknięcie\), albo jakiś element na stronie. Wysłanie formularza, załadowanie obrazka, to też zdarzenie. Przykładowe zdarzenia na stronie to:
+Наступним кроком буде виклик обох функцій при натисканні на кнопки. Кліки &mdash; це події, які відбуваються на сторінці. Вони можуть бути викликані користувачем \(наприклад, клацанням миші\) або елементом на сторінці. Відправлення форми або завантаження зображення також є подією. Прикладами подій на сторінці є:
 
-| Zdarzenie | Opis: |
+| Подія | Опис |
 | :--- | :--- |
-| blur | obiekt przestał być aktywny |
-| change | obiekt zmienił swoją zawartość \(np. pole formularza\) |
-| click | kliknięcie na obiekt |
-| dblclick | podwójne klikniecie na obiekt |
-| focus | wybrnie danego obiektu na stronie |
-| keydown | naciśniemy klawisz na klawiaturze |
-| input | w czasie trzymania klawisza |
-| keyUp | puścimy klawisz na klawiaturze |
-| load | gdy obiekt został załadowany \(może to być nawet cała strona\) |
-| mouseover | gdy kursor znalazł się na danym obiekcie |
-| mouseout | gdy kursor opuścił dany obiekt |
-| contextmenu | gdy kliknięto prawym klawiszem myszki i pojawiło się menu kontekstowe |
-| wheel | gdy kręcimy kółeczkiem myszki |
-| resize | gdy zmieniamy rozmiar okna przeglądarki |
-| select | gdy zawartość obiektu została zaznaczona |
-| submit | gdy formularz został wysłany |
-| unload | użytkownik opuszcza dana stronę |
-| animationstart | animacja css się zacznie |
-| animationend | animacja css się zacznie |
+| blur | об'єкт більше не активний |
+| change | змінився вміст об'єкту \(наприклад, поле форми\) |
+| click | клік на об'єкті |
+| dblclick | подвійний клік на об'єкті |
+| focus | вибір об'єкту на сторінці |
+| keydown | натискання клавіші на клавіатурі |
+| input | утримування клавіші на клавіатурі |
+| keyUp | відпускання клавіші на клавіатурі  |
+| load |  коли об'єкт завантажується \(це може бути і вся сторінка\) |
+| mouseover | коли курсор знаходиться на об'єкті |
+| mouseout | коли курсор покинув об'єкт |
+| contextmenu | при натисканні правої кнопки миші та виклику контекстного меню |
+| wheel | при обертанні коліщатка миші |
+| resize | коли змінюється розмір вікна браузера |
+| select | коли виділено вміст об'єкта |
+| submit | коли вміст форми був відправлений |
+| unload | користувач залишив сторінку |
+| animationstart | запускається css анімація |
+| animationend | css анімація закінчила програвання |
 
-Do śledzenia, czy dane wydarzenie miało miejsce posłuży nam metoda `addEventListener`
+Ми будемо використовувати метод `addEventListener` для відстеження того, чи відбулася подія.
 
 ```js
-element.addEventListener('event_jako_string', co_ma_się_wydarzyć, opcjonalnie_true_lub_false);
+element.addEventListener('подія як строка', що_має_відбутись, опціонально_true_або_false);
 ```
 
-Dla wszystkich wydarzeń na stronie stworzymy osobną funkcję. Nazwiemy ją `bindEvents`:
+Ми створимо окрему функцію для всіх подій на сторінці. Назвемо її `bindEvents`:
 
 ```js
 function bindEvents() {
 }
 ```
 
-Zacznijmy od przycisku wstecz. Jest on pod zmienną `prev`. Na tej zmiennej wywołajmy metodę `addEventListener`:
+Почнемо з кнопки "Назад". Вона знаходиться під змінною `prev`. Викличемо метод `addEventListener` для цієї змінної:
 
 ```js
 function bindEvents() {
@@ -236,7 +246,7 @@ function bindEvents() {
 }
 ```
 
-I teraz argumenty. Chcemy śledzić `event` kliknięcia, czyli 'click'. Ma on wywołać funkcję `slideToPrev`. Wstawmy je w odpowiednim miejscu:
+А тепер аргументи. Ми хочемо відстежити `event` кліка, тобто `click`. Для цього потрібно викликати функцію `slideToPrev`. Помістимо її в потрібне місце:
 
 ```js
 function bindEvents() {
@@ -244,13 +254,13 @@ function bindEvents() {
 }
 ```
 
-Dodajmy analogiczny event do funkcji `bindEvents` z tym, że dla przycisku `next`.
+Додамо аналогічну подію до функції `bindEvents`, тільки для кнопки `next`.
 
-Wywołajmy funkcję `bindEvents`, by sprawdzić, czy przyciski działają :\)
+Викличемо функцію `bindEvents` і перевіримо, чи працюють кнопки :\)
 
-Super! Spójrz jednak, co się będzie działo, jeśli ciągle będziemy klikać "dalej" lub "cofnij" - planety znikają. Nasza karuzela ciągle się przesuwa o 800px. Musimy ją ograniczyć. Po ostatniej planecie niech wraca do pierwszej, a gdy będziemy chcieli cofnąć się z pierwszej, niech pokaże nam ostatnią planetę.
+Чудово! Однак, подивіться, що станеться, якщо ми продовжимо натискати `next` або `back` &mdash; планети зникають. Наша карусель продовжує рухатися на 800px. Треба її обмежити. Після останньої планети нехай вона повертається до першої планети, а коли ми хочемо повернутися з першої планети, нехай вона показує нам останню планету.
 
-Spójrzmy się jeszcze raz na naszą funkcje:
+Давайте ще раз подивимось на нашу функцію:
 
 ```js
 function goToSlide(index) {
@@ -258,10 +268,9 @@ function goToSlide(index) {
     currentIndex = index;
 }
 ```
+Все, що відбувається, залежить від індексу. Тож давайте зробимо так, щоб індекс, більший за індекс останньої планети, дорівнював 0, а індекс, менший за індекс першої планети, дорівнював індексу першої планети.
 
-Wszystko, co się dzieje zależy od indeksu. Zróbmy więc tak, by indeks większy od indeksu ostatniej planety wyniósł 0, a indeks mniejszy od indeksu pierwszej planety był równy indeksowi pierwszej.
-
-Posłużą nam do tego instrukcje warunkowe \(if... else\). Czyli, jeśli indeks jest mniejszy od 0 zmieniamy go na wartość `slidesNumber`
+Для цього ми будемо використовувати умовні оператори \(if... else\). Тобто, якщо індекс менше 0, ми змінюємо його на значення `slidesNumber`.
 
 ```js
 function goToSlide(index) {
@@ -274,7 +283,7 @@ function goToSlide(index) {
 }
 ```
 
-A jeśli jest większy od `slidesNumber` - zmieniamy go na 0.
+А якщо він більший за `slidesNumber` &mdash; змінюємо його на 0.
 
 ```js
 function goToSlide(index) {
@@ -289,18 +298,18 @@ function goToSlide(index) {
 }
 ```
 
-Sprawdźmy teraz.
+Перевіримо її зараз.
 
-Dodajmy trochę więcej życia do karuzeli - niech sama się kręci. Wykorzystamy do tego znaną nam już metodę `setInterval`.
+Додамо каруселі ще трохи життя &mdash; нехай вона крутиться сама по собі. Для цього скористаємося вже знайомим нам методом `setInterval`.
 
-Stwórzmy funkcję `autorotate`
+Створимо функцію `autorotate`.
 
 ```js
 function autorotate() {
 }
 ```
 
-Niech co 4s \(4000 ms\) wykonuje się funkcja `slideToNext`:
+Нехай функція `slideToNext` виконується кожні 4 секунди (4000 мс):
 
 ```js
 function autorotate() {
@@ -308,7 +317,6 @@ function autorotate() {
 }
 ```
 
-I wywołajmy funkcję `autorotate`.
+І викликаємо функцію `autorotate`.
 
-I teraz wszystko się kręci! :\)
-
+І тепер все обертається! :\)

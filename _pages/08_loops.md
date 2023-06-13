@@ -1,73 +1,71 @@
 ---
-title: 8. Pętle
+title: 8. Цикл
 layout: post
 ---
 
-Załóżmy, że chcemy coś zrobić kilka razy, np. wysłać 5 takich samych wiadomości, albo nadać identyfikator 30 kolejnym książkom w naszym księgozbiorze. Robienie kilkukrotnie tej samej rzeczy jest mało optymalne. Dlatego możemy wykorzystać pętle. Żeby powtórzyć coś kilkukrotnie potrzebujemy licznika - by wiedzieć, w którym momencie jesteśmy i czy powinniśmy już skończyć, czy nadal powtarzać dany skrypt.
+Припустимо, ми хочемо зробити щось кілька разів, наприклад, відправити 5 однакових повідомлень або надати ідентифікатор ще 30 книгам з нашої книжкової колекції. Робити те саме кілька разів неоптимально. Ось чому ми можемо використовувати цикли. Для того щоб повторити щось кілька разів, нам потрібен лічильник: щоб знати, на якому етапі ми знаходимося і чи варто закінчувати або продовжувати повторювати сценарій.
 
-Załóżmy, że chcemy w konsoli napisać pięć razy wiadomość "Cześć! Miło nam Cię powitać na girls.js!". Możemy to zrobić w ten sposób:
+Припустимо, ми хочемо п'ять разів написати в консолі повідомлення "Привіт, раді вітати вас на girls.js!". Ми можемо зробити це таким чином:
 
 ```js
-console.log("Cześć! Miło nam Cię powitać na girls.js!");
-console.log("Cześć! Miło nam Cię powitać na girls.js!");
-console.log("Cześć! Miło nam Cię powitać na girls.js!");
-console.log("Cześć! Miło nam Cię powitać na girls.js!");
-console.log("Cześć! Miło nam Cię powitać na girls.js!");
+console.log("Привіт, раді вітати вас на girls.js!");
+console.log("Привіт, раді вітати вас на girls.js!");
+console.log("Привіт, раді вітати вас на girls.js!");
+console.log("Привіт, раді вітати вас на girls.js!");
+console.log("Привіт, раді вітати вас на girls.js!");
 ```
 
-Trochę dużo pisania, prawda? Możemy ten kod uprościć!
+Трохи забагато для написання, чи не так? Ми можемо зробити цей код простішим!
 
-### Pętla for
+### Цикл for
 
-Pętla for wygląda w następujące sposób:
+Цикл for виглядає наступним чином:
 
 ```js
-for (start licznika; wyrażenie określające czy należy zakończyć pętlę czy jeszcze nie; zwiększanie/pomniejszanie licznika ) {
-    kod który chcemy powtórzyć określoną liczbę razy
+for (початок циклу; вираз, чи завершувати цикл, чи ще ні; приріст/зменшення лічильника ) {
+    код, який ми хочемо повторити певну кількість разів
 }
 ```
+Переробімо наш код з повідомленням!
 
-Przeróbmy nasz kod z wiadomością!
-
-start licznika - zaczynamy od 0, czyli tworzymy zmienną \(która istnieje tylko na potrzeby pętli\),
+стартова умова: ми починаємо з 0, тому створюємо змінну-лічильник \(яка існує тільки для циклу\),
 
 `let i = 0;`
 
-koniec pętli - powtarzamy działanie dopóki licznik nie osiągnie 5, czyli
+умова для закінчення: повторюємо дію, доки лічильник не досягне значення 5, тобто
 
 `i <= 5;`
 
-zwiększanie/pomniejszanie licznika - po każdym przejściu pętli nasz licznik zwiększa się o jeden, czyli
+збільшення/зменшення лічильника: після кожного проходу циклу наш лічильник збільшується на одиницю, тобто
 
 `i += 1`
 
-Pętla będzie więc wyglądać w następujący sposób:
+Отже, цикл буде виглядати наступним чином:
 
 ```js
 for (let i = 0; i <= 5; i += 1) { 
-     console.log("Cześć! Miło nam Cię powitać na girls.js!");
+     console.log("Привіт, раді вітати вас на girls.js!");
 }
 ```
 
-Licznik możemy też zmniejszać. Wiemy, że wiadomości ma być 5, więc możemy to również zapisać tak:
+Ми також можемо зменшувати лічильник. Ми знаємо, що нам потрібно 5 повідомлень, тому можемо записати цикл так:
 
-start licznika - zaczynamy od 5 czyli `let i = 5;`
+початок циклу: починаємо з 5, тобто `let i = 5;`
 
-koniec pętli - powtarzamy dopóki nie osiągniemy 0, czyli dopóki `i` jest większe od zera,`i > 0;`
+кінець циклу: повторюємо, поки не досягнемо 0, тобто поки `i` більше нуля, `i > 0;`
 
-zwiększanie/pomniejszanie licznika - każda pętla odlicza od pięciu w dół, czyli `i -= 1;`
+збільшення/зменшення лічильника: кожен цикл відраховує від п'яти, тобто `i -= 1;`
 
 ```js
 for (let i = 5; i > 0; i -= 1) {
-  console.log("Cześć! Miło nam Cię powitać na girls.js!");  
+  console.log("Привіт, раді вітати вас на girls.js!");  
 }
 ```
+Спробуйте написати наведений вище цикл у своєму JS-файлі. Зробіть так, щоб код повторювався 10 разів.
 
-Spróbuj w swoim pliku JS zapisać powyższą pętlę. Spraw, by kod powtórzył się 10 razy.
+Час для наших книжок! Нагадаємо: ми хочемо додати ідентифікатор (id) до наступних 30 книг.
 
-Czas na nasze książki! Przypomnijmy - chcemy dodać identyfikator (id) kolejnym 30 książkom.
-
-Możemy to zrobić tak:
+Ми можемо зробити це ось так:
 
 ```js
 console.log("id-1");
@@ -80,9 +78,9 @@ console.log("id-6");
 console.log("id-30");
 ```
 
-Ale taki kod zająłby bardzo wiele miejsca. Wykorzystajmy więc pętle! Zauważmy, że tym razem powtarzamy tę samą czynność, jednak string który chcemy wyświetlić, zmienia się. Zwiększa się dokładnie o 1. Podobnie zachowuje się nasz licznik!
+Але такий код зайняв би дуже багато місця. Тому скористаємося циклами! Зверніть увагу, що цього разу ми повторюємо ту саму дію, але рядок, який ми хочемо вивести, змінюється. Він збільшується рівно на 1. Наш лічильник поводиться так само!
 
-Sprawdź co się wydarzy, gdy spróbujesz wyświetlić w konsoli wartość naszego licznika \(to jest zmienna więc wystarczy wpisać jej nazwę\).
+Подивіться, що відбувається, коли ми намагаємось відобразити значення нашого лічильника в консолі (це змінна, тому просто введи її ім'я).
 
 ```js
 for (let i = 0; i < 30; i += 1){
@@ -90,7 +88,7 @@ for (let i = 0; i < 30; i += 1){
 }
 ```
 
-Konsola wyświetliła nam liczby od 0 do 29. W końcu zaczynamy liczyć od 0 i powtarzamy kod dopóki jest mniejsze od 30. Gdy osiąga 30 zatrzymujemy pętlę. Musimy więc lekko przerobić naszą pętlę. Nasze id zaczyna się od 1, a powtarzamy pętlę, dopóki elementy są mniejsze **bądź równe** 30.
+Консоль показує нам числа від 0 до 29. Нарешті, ми починаємо рахувати з 0 і повторюємо код, поки лічильник не стане менше 30. Коли воно досягає 30, ми зупиняємо цикл. Отже, нам потрібно трохи переробити наш цикл. Наш ідентифікатор починається з 1, і ми повторюємо цикл до тих пір, поки елементи не стануть рівними 30.
 
 ```js
 for (let i = 1; i <= 30; i += 1) {
@@ -98,7 +96,7 @@ for (let i = 1; i <= 30; i += 1) {
 }
 ```
 
-Super! Teraz dodajmy brakujący element id, czyli string "id-". Możemy do tego wykorzystać dodawanie. Kiedy dodajemy string do liczby JS zamienia całość na string!
+Чудово! Тепер давайте додамо відсутній елемент id, тобто рядок "id-". Для цього ми можемо використовувати додавання. Коли ми додаємо рядок до числа, JS перетворює все це в рядок!
 
 ```js
 for (let i = 1; i <= 30; i += 1) { 
@@ -106,37 +104,34 @@ for (let i = 1; i <= 30; i += 1) {
 }
 ```
 
-### Zadanie:
+### Завдання
 
-Wykorzystaj powyższą pętlę, by nadać id 50 książkom. Zapisz kod w swoim pliku JS.
+Використай наведений вище цикл, щоб присвоїти ідентифікатор 50 книгам. Збережи код у своєму JS-файлі.
 
+## Цикл while
 
-### Pętla while
-
-Oprócz pętli `for` w języku JavaScript występuje pętla `while`, której struktura wygląda tak:
+Крім циклу `for`, в JavaScript є цикл `while`, структура якого виглядає наступним чином:
 
 ```js
-while (wyrażenie sprawdzające czy pętle należy wykonywać dalej) {
-    kod który chcemy powtórzyć dopóki jest spełniany warunek w nawiasie
+while (вираз для перевірки того, чи потрібно продовжувати цикл) {
+    код, який потрібно повторювати, доки виконується умова в дужках
 }
 ```
 
-Pętla `for` jest wykonywana określoną ilość. Pętla `while` działa, dopóki wyrażenie w nawiasach jest prawdziwe.
+Цикл `for` виконується певну кількість разів. Цикл `while` виконується до тих пір, поки вираз у круглих дужках є істинним.
 
-Zauważ jednak, że w tej pętli nie ma licznika. Dlatego często dodaje się go ręcznie. Wracając do naszej wiadomości do 5 osób:
+Зверни увагу, що в цьому циклі немає лічильника. Тому його часто додають вручну. Повернемося до нашого повідомлення 5 людям:
 
 ```js
 let counter = 0;
 while(counter < 5) {
-    console.log("Cześć! Miło nam Cię powitać na girls.js!");  
+    console.log("Привіт, раді вітати вас на girls.js!");  
     counter += 1;
-
 }
 ```
 
-Zmienną, która jest naszym licznikiem definiujemy poza pętlą. Przy każdej pętli zwiększamy licznik o 1.
+Ми визначаємо змінну, яка є нашим лічильником, поза циклом. У кожному циклі ми збільшуємо лічильник на 1.
 
-### Zadanie:
+### Завдання
 
-W swoim pliku JS napisz taką pętlę `while`, która 10 razy napisze w konsoli "JavaScript jest super!".
-
+Напишіть у своєму JS-файлі такий цикл `while`, який 10 разів виведе в консоль "JavaScript &mdash; це круто!".

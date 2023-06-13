@@ -1,52 +1,50 @@
 ---
-title: 5. Typy
+title: 5. Типи
 layout: post
 ---
 
-`sum` z wartością 99 to zmienna typu liczbowego \(**number**\). Oprócz liczb JS korzysta też z innych typów danych:
+`sum` зі значенням 99 є змінною типу число \(**number**\). Крім чисел, в JS також використовуються інші типи даних:
 
-**string** - ciąg znaków. Są zapisywane w cudzysłowiu lub apostrofach, np. 'Programiści JS są super'
+**string** &mdash; рядок символів. Вони записуються в лапках або апострофах, наприклад, "JS-програмісти &mdash; супер".
 
-**zmienna typu logicznego \(boolean\) **- true \(logiczna prawda\) lub false \(logiczny fałsz\)
+**boolean** &mdash; змінна логічного типу, де `true` позначає логічну істину, а `false` &mdash; логічну брехню.
 
-**null **- czyli pusty obiekt
+**null** &mdash; порожній об'єкт.
 
-**undefined **- wartość niezdefiniowana
+**undefined** &mdash; невизначене значення.
 
-Jak sprawdzić typ zmiennej? Służy do tego instrukcja `typeof`, np. `typeof sum`
+Як перевірити тип змінної? Для цього використовується команда `typeof`, наприклад, `typeof sum`.
 
-Spróbuj teraz stworzyć zmienną ze swoim imieniem. W konsoli wpisz `let name = "tu podaj swoje imię";` Następnie napisz `console.log(name);`. Powinnaś zobaczyć swoje imię w konsoli. Sprawdź jakiego typu jest Twoja zmienna `name` przez wpisanie w konsoli `console.log(typeof name);`
+Тепер спробуй створити змінну з твоїм ім'ям. У консолі введи `let name = "введи тут своє ім'я";`. Потім напиши `console.log(name);`. Маєш побачити своє ім'я в консолі! Тепер перевір тип змінної `name`, набравши в консолі `console.log(typeof name);`.
 
-### Liczby i operatory
+## Числа та оператори
 
-Na liczbach możemy wykonywać działania matematyczne. Służą nam do tego operatory przedstawione w poniższej tabelce.
+Ми можемо виконувати математичні операції над числами. Для цього ми використовуємо оператори, наведені у таблиці нижче.
 
-Załóżmy, że mamy następujące zmienne: 
+Припустимо, у нас є наступні змінні:
 
 ```js
 let y = 8;
-
 let z = 4;
-
 ```
 
-|  | Operator | Równanie | Wynik |
+|  | Оператор | Рівняння | Результат |
 | :--- | :--- | :--- | :--- |
-| + | Dodawanie | x = y + z | x = 12 |
-| - | Odejmowanie | x = y - z | x = 4 |
-| \* | Mnożenie | x = y \* z | x = 32 |
-| / | Dzielenie | x = y / z | x = 2 |
-| % | Reszta z dzielenia | x = y % 3 | x = 2 |
-| ++ | Inkrementacja | x = ++y | x = 9 |
+| + | Додавання | x = y + z | x = 12 |
+| - | Віднімання | x = y - z | x = 4 |
+| \* | Множення | x = y \* z | x = 32 |
+| / | Ділення | x = y / z | x = 2 |
+| % | Остача з ділення | x = y % 3 | x = 2 |
+| ++ | Інкремент (збільшення на 1) | x = ++y | x = 9 |
 |  |  | x = y++ | x=8; y = 9; |
-| -- | Dekrementacja | x = --y | x = 7 |
+| -- | Декремент (зменшення на 1) | x = --y | x = 7 |
 |  |  | x = y-- | x = 8; y = 7 |
 
-Spróbuj teraz zapisać kilka takich działań w konsoli. Najpierw stwórz dwie dowolne zmienne liczbowe, a potem wypisz przy pomocy `console.log` w konsoli wyniki działań.
+Тепер спробуй написати кілька таких дій у консолі. Спочатку створи будь-які дві числові змінні, а потім виведи результати дій за допомогою `console.log` у консоль.
 
-### Stringi
+## Рядки
 
-**Na stringach również można robić pewne operacje. Możemy je do siebie dodawać \(nazywa się to konkatenacja\).**
+Також можна виконувати деякі операції над рядками. Ми можемо додавати їх разом \(це називається конкатенацією\).
 
 ```js
 let text_1 = "Hello";
@@ -54,42 +52,41 @@ let text_2 = "Jack";
 let text3 = text_1 + ', ' + text_2 + '!'; // Hello, Jack!
 ```
 
-Stwórz zmienną `surname` i przypisz do niej swoje nazwisko. Następne zdefiniuj kolejną zmienną o nazwie `fullName` i spraw, by jej wartością były Twoje dwie wcześniejsze zmienne, czyli imię i nazwisko. Wypisz wartość zmiennej `fullName` w konsoli.
+Створи змінну `surname` і присвой їй своє прізвище. Потім створи ще одну змінну з назвою `fullName` і зроби її значенням дві ваші попередні змінні $mdash; прізвище та ім'я. Виведи значення змінної `fullName` у консоль.
 
-**Do sprawdzenia długości tekstu służy właściwość **`length`
+**Використовуй властивість** `length` для перевірки довжини тексту.
 
 ```js
 text_3.length; // 12
 ```
 
-Sprawdź, wypisując w konsoli, jaka jest długość trzech Twoich zmiennych tekstowych \(`name`, `surname`, `fullName`\).
+Перевір, виписавши в консоль, довжину створених трьох текстових змінних \(`name`, `surname`, `fullName`\).
 
-**Możemy też zmienić znaki w tekście na duże lub małe:**
+**Ми також можемо змінити символи в тексті на верхній або нижній регістр**:
 
 ```js
 text_3.toUpperCase(); // HELLO, JACK!
 text_3.toLowerCase(); // hello, jack!
 ```
+Зроби так, щоб твоє ім'я у змінній `name` було записане великими літерами.
 
-Spraw, aby Twoje imię w zmiennej `name` było napisane wielkimi literami.
-
-**Kolejną metodą jest sprawdzanie pozycji podtekstu:**
+**Інша операція: перевірка позиції символа у тексті**:
 
 ```js
 text_3.indexOf('Jack'); // 7
 ```
 
-Sprawdź, jaką pozycję zajmuje w Twoim imieniu literka 'a'.
+Перевір, яку позицію займає літера 'a' (або інша) у твоєму імені.
 
-**Możemy również zamienić fragmenty tekstu:**
+**Ми також можемо замінювати частини тексту**:
 
 ```js
 text_3.replace('Jack', 'Mary');
 ```
 
-W ten sposób zastąpimy pierwsze wystąpienie danego ciągu znaków \(w naszym przypadku 'Jack'\) nowym stringiem \('Mary'\).
+Це замінить першу комбінацію символів заданого рядка \(у нашому випадку 'Jack'\) на нову комбінацію \('Mary'\).
 
-### Zadanie
+### Завдання
 
-Stwórz zmienną `hello` i przypisz do niej następujący tekst: "Hello, \[tu podaj swoje imię\]!". Następnie, korzystając z metody `replace`, spraw, aby tekst wyglądał tak: "Hello, JavaScript!".
+Створи змінну `hello` і присвой їй наступний текст: "Привіт, [введи тут своє ім'я]!". Потім, використовуючи `replace`, зробb так, щоб текст виглядав наступним чином: "Привіт, JavaScript!".
 

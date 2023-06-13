@@ -1,21 +1,20 @@
 ---
-title: 14. Jesteś obiektem
+title: 14. Ти об'єкт
 layout: post
 ---
-
-... bo wszystko jest obiektem ;\) To kolejny typ danych. Wygląda następująco:
+...тому що все є об'єктом ;\) Це ще один тип даних. Виглядає він наступним чином:
 
 ```js
-let zmienna = {
-    klucz: wartosc,
-    klucz2: wartosc2,
-    klucz3: wartosc3
+let variable = {
+    key: value,
+    key2: value2,
+    key3: value3
 }
 ```
 
-Jak widzisz, przypomina tablicę. Z tym że w tablicy bardzo duże znaczenie ma kolejność elementów które się w niej znajdują. W przypadku obiektów kluczowe są... klucze ;\)
+Як бачите, нагадує масив. За винятком того, що в масиві дуже важливий порядок елементів, які в ньому знаходяться. У випадку з об'єктами ключовими елементами є... ключі ;\)
 
-Gdyby przedstawić jakąś osobę jako obiekt, moglibyśmy to zrobić w następujący sposób:
+Якби ми хотіли представити людину як об'єкт, ми могли б зробити це наступним чином:
 
 ```js
 let person = {
@@ -25,26 +24,26 @@ let person = {
 }
 ```
 
-By odwołać się do jakiegoś elementu obiektu trzeba odwołać się do jego klucza, np.:
+Щоб звернутися до елемента об'єкта, потрібно звернутися до його ключа, наприклад:
 
 ```js
 person.hobby;
 ```
 
-Do istniejącego obiektu możemy dodawać nowe elementy:
+Ми можемо додавати нові елементи до вже наявного об'єкта:
 
 ```js
 person.city = 'Poznań';
 console.log(person);
 ```
 
-Możemy je także usuwać:
+Ми також можемо їх видаляти:
 
 ```js
 delete person.hobby;
 ```
 
-Czasami w obiekcie może być inny obiekt:
+Іноді в об'єкті може бути ще один об'єкт:
 
 ```js
  let person = {   
@@ -60,11 +59,8 @@ Czasami w obiekcie może być inny obiekt:
 }
 ```
 
-Jak wyświetlić imię siostry?
+Як вивести ім'я сестри?
 
 ```js
 person.family.sister;
 ```
-
-
-
